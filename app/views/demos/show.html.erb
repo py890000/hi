@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Userinfo:</b>
+  <%= @demo.userInfo %>
+</p>
+
+<p>
+  <b>Login name:</b>
+  <%= @demo.login_name %>
+</p>
+
+<p>
+  <b>Login password:</b>
+  <%= @demo.login_password %>
+</p>
+
+
+<%= link_to 'Edit', edit_demo_path(@demo) %> |
+<%= link_to 'Back', demos_path %>
