@@ -1,0 +1,28 @@
+<ul>
+  <table>
+  <% @articles.each do |article| %>
+    <tr>
+    <li>
+    <%= article.title %>    
+    </li>
+    <li>
+    <%= article.body %>    
+    </li>
+
+     <li>
+     <%= link_to '查看',:controller => 'articles',:action => 'show', :id => article  %> 
+     <%= link_to '修改',:controller => 'articles',:action => 'edit', :id => article  %>
+      <%= link_to '删除',:controller => 'articles',:action => 'destory', :id => article  %>
+     
+     </li>
+   </tr>
+   <% end %>
+
+ </table>
+<%= paginate @articles %>
+<%= link_to '新赠', :controller => 'articles', :action => 'new' %>
+
+
+
+
+</ul>
