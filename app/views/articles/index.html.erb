@@ -1,28 +1,32 @@
-<ul>
-  <table>
-  <% @articles.each do |article| %>
-    <tr>
-    <li>
-    <%= article.title %>    
-    </li>
-    <li>
-    <%= article.body %>    
-    </li>
+<table class="modth" cellspacing="0" cellpadding="0" border="0" width ="100%" >
+	<tbody>
+		<tr>
+			<td class="modtl">&nbsp;</td>
+			<td nowrap="" class="modtc"><span class="modtit">文章列表 </span></td>
+			<td nowrap="" align="right" class="modtc"> <%= link_to '写新文章', {:controller => 'articles', :action => 'new'},{ :class => "modact"} %> </td>
+			<td  class="modtr">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
 
-     <li>
-     <%= link_to '查看',:controller => 'articles',:action => 'show', :id => article  %> 
-     <%= link_to '修改',:controller => 'articles',:action => 'edit', :id => article  %>
-      <%= link_to '删除',:controller => 'articles',:action => 'destory', :id => article  %>
-     
-     </li>
-   </tr>
-   <% end %>
+<table>
+	<% @articles.each do |article| %>
+	<tr>
+		<li>
+			<%= article.title %>
+		</li>
+		<li>
+			<%= article.body %>
+		</li>
+		<li>
+			<%= link_to '查看',article %>
+			<%= link_to '修改',edit_article_path(article)  %>
+      <%= link_to '删除',article,:confirm =>'you sure', :method => 'delete' %>
 
- </table>
+		</li>
+	</tr>
+	<% end %>
+
+</table>
 <%= paginate @articles %>
-<%= link_to '新赠', :controller => 'articles', :action => 'new' %>
 
-
-
-
-</ul>

@@ -1,6 +1,12 @@
 Hi::Application.routes.draw do
-  resources :demos
- # resources  :articles 
+  devise_for :users
+
+  resources :articles do
+    resources :comments
+  end
+
+  root :to => "home#index"
+  # resources  :articles 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

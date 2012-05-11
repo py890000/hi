@@ -30,8 +30,8 @@ class ArticlesController < ApplicationController
      redirect_to :action => :show, :id => @article
   end
  
-  def destory
-    @article.destroy
+  def destroy
+    @article.destroy    
 
     redirect_to :action => :index
   end 
