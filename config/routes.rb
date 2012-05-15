@@ -5,7 +5,7 @@ Hi::Application.routes.draw do
     resources :comments
   end
 
-  root :to => "home#index"
+ # root :to => "home#index"
   # resources  :articles 
   # The priority is based upon order of creation:
   # first created -> highest priority.
