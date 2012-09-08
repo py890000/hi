@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(:version => 20120511081212) do
   add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
   add_index "comments", ["userInfo_id"], :name => "index_comments_on_userInfo_id"
 
-  create_table "demos", :force => true do |t|
-    t.string   "userInfo"
-    t.string   "login_name"
-    t.string   "login_password"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
   create_table "models", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -73,17 +65,6 @@ ActiveRecord::Schema.define(:version => 20120511081212) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "user_infos", :force => true do |t|
-    t.string   "loginer"
-    t.string   "password"
-    t.string   "email"
-    t.string   "age"
-    t.datetime "creatTime"
-    t.datetime "updateTime"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

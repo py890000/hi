@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @article.save
-
+    flash[:notice] = "adwd hni "
     redirect_to :action => :index
   end
 
