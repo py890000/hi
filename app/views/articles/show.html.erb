@@ -1,5 +1,9 @@
 <%= @article.title %>
 <%= simple_format(@article.body) %>
+<%= @article.tag_list%>
+
+
+
 <p>
 	<%= link_to 'back to index',:controller => 'articles', :action => 'index' %>
 </p>

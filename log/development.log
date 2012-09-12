@@ -8968,3 +8968,938 @@ Served asset /application.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-08 21:20:51 +0800
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:07:03 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (104.4ms)
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (1.3ms)
+Completed 200 OK in 298ms (Views: 200.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:03 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:03 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-09-12 10:07:13 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/_links.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 37ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:14 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:14 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-09-12 10:07:20 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xcIbSrh6+F7gPBylee8ibJl6LY+DO+vJlWl5n8yJxZE=", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"提交"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.9ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:20 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:20 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2012-09-12 10:07:34 +0800
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (7.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 121ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2012-09-12 10:07:36 +0800
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xcIbSrh6+F7gPBylee8ibJl6LY+DO+vJlWl5n8yJxZE=", "user"=>{"email"=>""}, "commit"=>"给我发送重设密码的说明"}
+  Rendered devise/_links.erb (0.5ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (6.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:36 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:07:48 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (7.1ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:48 +0800
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:48 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 10:07:51 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.2ms)
+  Rendered articles/new.html.erb within layouts/application (14.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:52 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:52 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 10:07:56 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xcIbSrh6+F7gPBylee8ibJl6LY+DO+vJlWl5n8yJxZE=", "article"=>{"title"=>"fefef", "body"=>"efefefwefwef"}, "commit"=>"保存"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (135.0ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at", "userInfo_id") VALUES (?, ?, ?, ?, ?)  [["body", "efefefwefwef"], ["created_at", Wed, 12 Sep 2012 02:07:56 UTC +00:00], ["title", "fefef"], ["updated_at", Wed, 12 Sep 2012 02:07:56 UTC +00:00], ["userInfo_id", nil]]
+  [1m[36m (21.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 168ms (ActiveRecord: 157.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:07:56 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (9.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:07:56 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:07:56 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 10:08:03 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (0.6ms)
+  Rendered articles/new.html.erb within layouts/application (7.1ms)
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:08:03 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:08:03 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 10:08:07 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xcIbSrh6+F7gPBylee8ibJl6LY+DO+vJlWl5n8yJxZE=", "article"=>{"title"=>"fefef", "body"=>"efefefefe"}, "commit"=>"保存"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "articles" ("body", "created_at", "title", "updated_at", "userInfo_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "efefefefe"], ["created_at", Wed, 12 Sep 2012 02:08:07 UTC +00:00], ["title", "fefef"], ["updated_at", Wed, 12 Sep 2012 02:08:07 UTC +00:00], ["userInfo_id", nil]]
+  [1m[35m (15.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 22ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:08:07 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (21.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 73ms (Views: 72.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:08:07 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:08:07 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:17:13 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (71.1ms)
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (1.1ms)
+Completed 200 OK in 223ms (Views: 146.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:17:14 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:17:14 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:17:16 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (13.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:17:16 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:17:16 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-09-12 10:17:18 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/_links.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.8ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 87ms (Views: 65.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:17:18 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:17:18 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-09-12 10:27:57 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/_links.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:27:58 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:27:58 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-09-12 10:28:01 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:28:01 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:28:01 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:28:01 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.7ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (10.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 89.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:28:02 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:28:02 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 10:28:05 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.1ms)
+  Rendered articles/new.html.erb within layouts/application (3.2ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:28:05 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:28:05 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 10:28:09 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xcIbSrh6+F7gPBylee8ibJl6LY+DO+vJlWl5n8yJxZE=", "article"=>{"title"=>"34343", "body"=>"343434444444444444"}, "commit"=>"保存"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (22.8ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at", "userInfo_id") VALUES (?, ?, ?, ?, ?)  [["body", "343434444444444444"], ["created_at", Wed, 12 Sep 2012 02:28:09 UTC +00:00], ["title", "34343"], ["updated_at", Wed, 12 Sep 2012 02:28:09 UTC +00:00], ["userInfo_id", nil]]
+  [1m[36m (18.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 48ms (ActiveRecord: 41.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:28:09 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (41.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 89ms (Views: 88.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:28:10 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:28:10 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles?page=2" for 127.0.0.1 at 2012-09-12 10:34:38 +0800
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 5
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (57.2ms)
+  Rendered devise/menu/_registration_items.html.erb (2.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 91ms (Views: 90.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:34:38 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:34:38 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 10:34:41 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (17.9ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 10:34:41 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 10:34:41 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 14:13:33 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (152.2ms)
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 382ms (Views: 224.6ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 14:13:35 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (60.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:13:35 +0800
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:13:36 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 14:45:42 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (108.2ms)
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+Completed 200 OK in 301ms (Views: 215.6ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:45:43 +0800
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:45:43 +0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 14:45:45 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.2ms)
+  Rendered articles/new.html.erb within layouts/application (3.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:45:46 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:45:46 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 14:45:53 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (3.1ms)
+  Rendered articles/new.html.erb within layouts/application (6.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:45:53 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:45:53 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 14:46:18 +0800
+Processing by ArticlesController#new as HTML
+ERROR: compiling _app_views_articles__form_html_erb__120955091_90820360 RAISED /home/py/dev/hi/app/views/articles/_form.html.erb:11: syntax error, unexpected '<'
+  <%= f.submit "保存" );@output_buffer.safe_concat('
+   ^
+/home/py/dev/hi/app/views/articles/_form.html.erb:14: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tput_buffer = _old_virtual_path, _old_output_buffer
+...                               ^
+/home/py/dev/hi/app/views/articles/_form.html.erb:14: syntax error, unexpected '\n', expecting '='
+Function body:           def _app_views_articles__form_html_erb__120955091_90820360(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "articles/_form";_old_output_buffer = @output_buffer;f = local_assigns[:f];form = local_assigns[:form];;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('
+
+  ');@output_buffer.append= ( f.label :title," 标题" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('   
+  ');@output_buffer.append= ( f.label :body,"内容");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_area :body );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.label :tag_list,"tags");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :tag_list> 
+
+  <%= f.submit "保存" );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `module_eval'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `compile'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:233:in `compile!'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:142:in `block in render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:125:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:141:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/partial_renderer.rb:238:in `block in render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/partial_renderer.rb:237:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:15:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+/home/py/dev/hi/app/views/articles/new.html.erb:2:in `block in _app_views_articles_new_html_erb__895724579_91548340'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/helpers/capture_helper.rb:40:in `block in capture'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/helpers/capture_helper.rb:187:in `with_output_buffer'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/helpers/capture_helper.rb:40:in `capture'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/helpers/form_helper.rb:606:in `fields_for'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/helpers/form_helper.rb:377:in `form_for'
+/home/py/dev/hi/app/views/articles/new.html.erb:1:in `_app_views_articles_new_html_erb__895724579_91548340'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:143:in `block in render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:125:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:141:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:88:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:414:in `_run__226868195__process_action__791538950__callbacks'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/warden-1.1.1/lib/warden/manager.rb:35:in `block in call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/warden-1.1.1/lib/warden/manager.rb:34:in `catch'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/warden-1.1.1/lib/warden/manager.rb:34:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__522408324__call__659752053__callbacks'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/engine.rb:479:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/application.rb:220:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/py/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered articles/_form.html.erb (78.9ms)
+  Rendered articles/new.html.erb within layouts/application (82.5ms)
+Completed 500 Internal Server Error in 86ms
+
+ActionView::Template::Error (/home/py/dev/hi/app/views/articles/_form.html.erb:11: syntax error, unexpected '<'
+  <%= f.submit "保存" );@output_buffer.safe_concat('
+   ^
+/home/py/dev/hi/app/views/articles/_form.html.erb:14: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tput_buffer = _old_virtual_path, _old_output_buffer
+...                               ^
+/home/py/dev/hi/app/views/articles/_form.html.erb:14: syntax error, unexpected '\n', expecting '='):
+    8:   <%= f.label :tag_list,"tags"%>
+    9:   <%= f.text_field :tag_list> 
+    10: 
+    11:   <%= f.submit "保存" %>
+  app/views/articles/new.html.erb:2:in `block in _app_views_articles_new_html_erb__895724579_91548340'
+  app/views/articles/new.html.erb:1:in `_app_views_articles_new_html_erb__895724579_91548340'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.1ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 14:48:26 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (200.5ms)
+  Rendered articles/new.html.erb within layouts/application (202.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 235ms (Views: 234.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:48:26 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:48:26 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 14:49:00 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsIPbEB9IT9y0p/3nfr/dtnev4W2x0NqZkPn62zS3fk=", "article"=>{"title"=>"sss", "body"=>"ssss", "tag_list"=>"ssssss,kii"}, "commit"=>"保存"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: tag_list):
+  app/controllers/articles_controller.rb:14:in `new'
+  app/controllers/articles_controller.rb:14:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 14:55:50 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (104.8ms)
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (1.4ms)
+Completed 200 OK in 275ms (Views: 187.5ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:55:50 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:55:50 +0800
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 14:55:52 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (128.9ms)
+  Rendered articles/new.html.erb within layouts/application (133.9ms)
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 157ms (Views: 155.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 14:55:52 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 14:55:52 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 14:56:00 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsIPbEB9IT9y0p/3nfr/dtnev4W2x0NqZkPn62zS3fk=", "article"=>{"title"=>"eec", "body"=>"ececece", "tag_list"=>"qweqeqwe,e3d"}, "commit"=>"保存"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: tag_list):
+  app/controllers/articles_controller.rb:14:in `new'
+  app/controllers/articles_controller.rb:14:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 15:03:41 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (107.7ms)
+  Rendered devise/menu/_registration_items.html.erb (10.2ms)
+  Rendered devise/menu/_login_items.html.erb (2.4ms)
+Completed 200 OK in 320ms (Views: 216.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:03:41 +0800
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:03:41 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 15:03:43 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (121.8ms)
+  Rendered articles/new.html.erb within layouts/application (128.7ms)
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 154ms (Views: 153.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:03:43 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:03:43 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 15:03:54 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsIPbEB9IT9y0p/3nfr/dtnev4W2x0NqZkPn62zS3fk=", "article"=>{"title"=>"wwwww", "body"=>"sssss", "tag_list"=>"wo,io"}, "commit"=>"保存"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = 'wo' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (76.9ms)[0m  [1mINSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 12 Sep 2012 07:03:54 UTC +00:00], ["name", "wo"], ["updated_at", Wed, 12 Sep 2012 07:03:54 UTC +00:00]]
+  [1m[35m (32.2ms)[0m  commit transaction
+Completed 500 Internal Server Error in 216ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: tag):
+  app/models/article.rb:18:in `block in tag_list='
+  app/models/article.rb:16:in `each'
+  app/models/article.rb:16:in `tag_list='
+  app/controllers/articles_controller.rb:14:in `new'
+  app/controllers/articles_controller.rb:14:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 15:07:00 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (105.3ms)
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (2.4ms)
+Completed 200 OK in 296ms (Views: 206.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:07:01 +0800
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:07:01 +0800
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-12 15:07:03 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (124.4ms)
+  Rendered articles/new.html.erb within layouts/application (129.4ms)
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 152ms (Views: 151.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:07:03 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:07:03 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-12 15:07:11 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsIPbEB9IT9y0p/3nfr/dtnev4W2x0NqZkPn62zS3fk=", "article"=>{"title"=>"efefef", "body"=>"efefefe", "tag_list"=>"fefef,ki"}, "commit"=>"保存"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = 'fefef' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (26.8ms)[0m  [1mINSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00], ["name", "fefef"], ["updated_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00]]
+  [1m[35m (77.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = 'ki' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00], ["name", "ki"], ["updated_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00]]
+  [1m[35m (21.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at", "userInfo_id") VALUES (?, ?, ?, ?, ?)  [["body", "efefefe"], ["created_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00], ["title", "efefef"], ["updated_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00], ["userInfo_id", nil]]
+  [1m[36mSQL (21.2ms)[0m  [1mINSERT INTO "taggings" ("article_id", "created_at", "tag_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article_id", 7], ["created_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00], ["tag_id", 2], ["updated_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("article_id", "created_at", "tag_id", "updated_at") VALUES (?, ?, ?, ?)  [["article_id", 7], ["created_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00], ["tag_id", 3], ["updated_at", Wed, 12 Sep 2012 07:07:11 UTC +00:00]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 302ms (ActiveRecord: 159.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-12 15:07:11 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (26.1ms)
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.2ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:07:11 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:07:11 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-12 15:09:31 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (4.5ms)
+  Rendered articles/show.html.erb within layouts/application (225.3ms)
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (1.8ms)
+Completed 200 OK in 512ms (Views: 418.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:09:31 +0800
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:09:31 +0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-12 15:10:52 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (3.7ms)
+  Rendered articles/show.html.erb within layouts/application (185.4ms)
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 215ms (Views: 209.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:10:52 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:10:52 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles?page=2" for 127.0.0.1 at 2012-09-12 15:10:59 +0800
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mArticle Load (1.4ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 5
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (42.3ms)
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+Completed 200 OK in 147ms (Views: 143.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:10:59 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:10:59 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2012-09-12 15:11:01 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mTag Load (1.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 7[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 7
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (2.1ms)
+  Rendered articles/show.html.erb within layouts/application (10.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-12 15:11:01 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-12 15:11:01 +0800
+Served asset /application.js - 304 Not Modified (0ms)
