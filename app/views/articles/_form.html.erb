@@ -7,5 +7,5 @@
   <%= f.text_area :body %>
   <%= f.label :tag_list,"tags"%>
   <%= f.text_field :tag_list%> 
-
+  <%- f.hidden_field :userInfo,:value =>current_user.id %>
   <%= f.submit "保存" %>

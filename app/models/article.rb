@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  belongs_to :userInfo
+  belongs_to :userInfo,:class_name => "User", :foreign_key => "userInfo_id"
   attr_accessible :body, :title,:tag_list
   has_many :comments,:dependent => :destroy
   has_many :taggings 
@@ -18,5 +18,10 @@ class Article < ActiveRecord::Base
       tagging = self.taggings.new
       tagging.tag_id = tag.id
     end
-  end    
+  end
+
+
+
+
+
 end
