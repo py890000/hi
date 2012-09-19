@@ -10566,3 +10566,810 @@ ActiveRecord::AssociationTypeMismatch (User(#85032150) expected, got String(#793
   Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
   Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
   Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:14:21 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (200.2ms)
+  Rendered devise/_links.erb (102.1ms)
+Completed 500 Internal Server Error in 649ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xacc3508>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "登陆", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_88401720'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.4ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (54.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:48 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (26.4ms)
+  Rendered devise/_links.erb (48.7ms)
+Completed 500 Internal Server Error in 95ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf63bc8>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:49 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (68.3ms)
+  Rendered devise/_links.erb (40.0ms)
+Completed 500 Internal Server Error in 133ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb27f208>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:50 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (7.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (29.6ms)
+  Rendered devise/_links.erb (44.5ms)
+Completed 500 Internal Server Error in 94ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb6c446c>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:50 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.5ms)
+  Rendered devise/_links.erb (61.5ms)
+Completed 500 Internal Server Error in 114ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xa8dcc50>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:50 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (28.7ms)
+  Rendered devise/_links.erb (91.7ms)
+Completed 500 Internal Server Error in 146ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf4fe84>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:51 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (33.9ms)
+  Rendered devise/_links.erb (40.1ms)
+Completed 500 Internal Server Error in 91ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb1bd270>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.4ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:51 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (143.0ms)
+  Rendered devise/_links.erb (82.7ms)
+Completed 500 Internal Server Error in 277ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb0064f4>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (52.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:52 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (2.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (53.4ms)
+  Rendered devise/_links.erb (85.8ms)
+Completed 500 Internal Server Error in 190ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf63b00>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.8ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:52 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (25.2ms)
+  Rendered devise/_links.erb (38.1ms)
+Completed 500 Internal Server Error in 95ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb1bf2f0>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:52 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (29.0ms)
+  Rendered devise/_links.erb (44.0ms)
+Completed 500 Internal Server Error in 141ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb280fcc>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:52 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.6ms)
+  Rendered devise/_links.erb (43.0ms)
+Completed 500 Internal Server Error in 103ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb6a78d0>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (51.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (60.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:52 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (30.8ms)
+  Rendered devise/_links.erb (46.1ms)
+Completed 500 Internal Server Error in 109ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaee8e3c>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:52 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (28.2ms)
+  Rendered devise/_links.erb (92.4ms)
+Completed 500 Internal Server Error in 140ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xada0a0c>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (52.9ms)
+  Rendered devise/_links.erb (46.0ms)
+Completed 500 Internal Server Error in 128ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf63f60>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (80.2ms)
+  Rendered devise/_links.erb (40.2ms)
+Completed 500 Internal Server Error in 144ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb2800f4>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (33.8ms)
+  Rendered devise/_links.erb (44.4ms)
+Completed 500 Internal Server Error in 99ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb6c65dc>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.8ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (23.9ms)
+  Rendered devise/_links.erb (35.7ms)
+Completed 500 Internal Server Error in 94ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xa250c74>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (33.7ms)
+  Rendered devise/_links.erb (93.2ms)
+Completed 500 Internal Server Error in 157ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb105738>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.4ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (38.9ms)
+  Rendered devise/_links.erb (46.0ms)
+Completed 500 Internal Server Error in 103ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf62214>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.8ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (3.9ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (80.0ms)
+  Rendered devise/_links.erb (37.0ms)
+Completed 500 Internal Server Error in 139ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb28101c>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (33.4ms)
+  Rendered devise/_links.erb (37.0ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb5371a8>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (3.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.1ms)
+  Rendered devise/_links.erb (40.9ms)
+Completed 500 Internal Server Error in 92ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xb3f1bf4>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (28.2ms)
+  Rendered devise/_links.erb (85.5ms)
+Completed 500 Internal Server Error in 141ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xa5358f4>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (14.3ms)
+  Rendered devise/_links.erb (42.4ms)
+Completed 500 Internal Server Error in 83ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf62f84>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:15:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (85.2ms)
+  Rendered devise/_links.erb (40.4ms)
+Completed 500 Internal Server Error in 144ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaebeee8>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Sign in", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_94820510'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:21:06 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (18.4ms)
+  Rendered devise/_links.erb (135.0ms)
+Completed 500 Internal Server Error in 184ms
+
+ActionView::Template::Error (undefined local variable or method `devise_mapping' for #<#<Class:0xa0f4a4c>:0xb5dbbb8>):
+    2:   <%= link_to "登陆", new_session_path(:user) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    6:   <%= link_to "注册", new_registration_path(:user) %><br />
+    7: <% end -%>
+    8: 
+  app/views/devise/_links.erb:5:in `_app_views_devise__links_erb__390205707_95398950'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:31:48 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (1.9ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (26.3ms)
+  Rendered devise/_links.erb (52.5ms)
+Completed 500 Internal Server Error in 103ms
+
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0xa0f4a4c>:0xaf623cc>):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "登陆", new_session_path(resource_name) %><br />
+    3: <% end -%>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  app/views/devise/_links.erb:2:in `_app_views_devise__links_erb__390205707_95388370'
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__209207996_89912790'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:32:59 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (34.9ms)
+  Rendered devise/_links.erb (2.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (10.8ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-09-13 08:29:21.412401', "current_sign_in_at" = '2012-09-19 03:32:59.963015', "sign_in_count" = 8, "updated_at" = '2012-09-19 03:32:59.963695' WHERE "users"."id" = 2[0m
+  [1m[35m (35.4ms)[0m  commit transaction
+  Rendered devise/menu/_login_items.html.erb (300.5ms)
+Completed 200 OK in 356ms (Views: 305.0ms | ActiveRecord: 49.8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:33:00 +0800
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:33:00 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2012-09-19 11:33:19 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mUPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2012-09-19 03:33:19.673176' WHERE "users"."id" = 2[0m
+  [1m[35m (22.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 34ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-19 11:33:19 +0800
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 64ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-19 11:33:19 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.2ms)
+  Rendered devise/_links.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:33:20 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:33:20 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-19 11:36:24 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+  Rendered devise/_links.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 132ms (Views: 91.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:36:24 +0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:36:24 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-19 11:37:04 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q+L0sxnklpTTJ+XKWdobZhNfHAlEhCrp5qnu07jz20c=", "user"=>{"email"=>"py890000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"提交"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'py890000@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "remember_created_at" = '2012-09-19 03:37:04.246524', "updated_at" = '2012-09-19 03:37:04.247785' WHERE "users"."id" = 2[0m
+  [1m[35m (13.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-09-19 03:32:59.963015', "current_sign_in_at" = '2012-09-19 03:37:04.265188', "sign_in_count" = 9, "updated_at" = '2012-09-19 03:37:04.266302' WHERE "users"."id" = 2
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 176ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-19 11:37:04 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/application (4.0ms)
+  Rendered devise/_links.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:37:04 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:37:04 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:37:12 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (103.2ms)
+  Rendered devise/_links.erb (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 130ms (Views: 127.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:37:12 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:37:12 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:39:18 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.6ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (31.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (3.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 68.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:39:18 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:39:18 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-19 11:39:20 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (10.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (36.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 51.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-19 11:39:20 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:39:20 +0800
+Served asset /application.css - 304 Not Modified (0ms)
