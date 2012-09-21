@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(params[:article])
-    @article.userInfo.id = current_user.id
+    @article.userInfo_id = current_user.id
     @article.save
     redirect_to :action => :index
   end

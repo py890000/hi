@@ -11373,3 +11373,3247 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-19 11:39:20 +0800
 Served asset /application.css - 304 Not Modified (0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateArticles (20120507083118)
+Migrating to CreateComments (20120507083136)
+Migrating to CreateTags (20120507083150)
+Migrating to CreateTaggings (20120507083204)
+Migrating to DeviseCreateModels (20120511065615)
+Migrating to DeviseCreateUsers (20120511081212)
+Migrating to CreateRoles (20120919034655)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role_name" varchar(255), "role_desc" varchar(255), "state" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120919034655')[0m
+  [1m[35m (35.1ms)[0m  commit transaction
+Migrating to AddRoleUser (20120919054705)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "role_id" integer
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120919054705')[0m
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("articles")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_articles_on_userInfo_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_comments_on_article_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_comments_on_userInfo_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("models")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_models_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_models_on_email')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("taggings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_article_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("tags")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 15:32:04 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (139.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-09-19 03:37:04.265188', "current_sign_in_at" = '2012-09-21 07:32:05.082951', "sign_in_count" = 10, "updated_at" = '2012-09-21 07:32:05.083609' WHERE "users"."id" = 2[0m
+  [1m[35m (83.6ms)[0m  commit transaction
+  Rendered devise/menu/_registration_items.html.erb (221.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+Completed 200 OK in 675ms (Views: 485.1ms | ActiveRecord: 121.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 15:32:05 +0800
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 15:32:05 +0800
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 15:40:45 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (71.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (23.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 185ms (Views: 124.5ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 15:40:45 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 15:40:45 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 15:41:27 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (61.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 83.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 15:41:28 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 15:41:28 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 15:43:16 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 15:43:16 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 15:43:16 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 15:49:00 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (4.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (68.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 86ms (Views: 79.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 15:49:00 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 15:49:00 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:05:03 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.6ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (17.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:05:03 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:05:03 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:24:35 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.6ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (21.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:24:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:24:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:24:48 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (64.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (23.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 195ms (Views: 136.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/bootstrap/bootstrap.css" for 127.0.0.1 at 2012-09-21 16:24:48 +0800
+
+ActionController::RoutingError (No route matches [GET] "/bootstrap/bootstrap.css"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:24:48 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:24:48 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:24:51 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (25.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bootstrap/bootstrap.css" for 127.0.0.1 at 2012-09-21 16:24:51 +0800
+
+ActionController::RoutingError (No route matches [GET] "/bootstrap/bootstrap.css"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/py/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:24:51 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:24:51 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:26:06 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (32.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (3.3ms)
+  Rendered devise/menu/_login_items.html.erb (2.2ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:26:06 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:26:06 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:31:25 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (28.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:31:26 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:31:26 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:37:07 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (73.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 83ms (Views: 81.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:37:07 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:37:07 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles?page=2" for 127.0.0.1 at 2012-09-21 16:37:22 +0800
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 5
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (43.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:37:22 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:37:22 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles?page=2" for 127.0.0.1 at 2012-09-21 16:37:38 +0800
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (30.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (4.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:37:38 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:37:38 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:37:41 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (12.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:37:41 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:37:41 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:37:43 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (24.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:37:43 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:37:43 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:42:11 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (72.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:42:12 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:42:12 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:45:21 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:45:21 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:45:21 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:47:15 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (35.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:47:15 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:47:15 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (32.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:53 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:53 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (59.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 69.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (23.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (23.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:54 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (21.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (21.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (40.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (45.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (9.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (29.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (7.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (22.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (23.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (13.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (13.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (3.2ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (13.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (48.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (13.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (22.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (21.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (2.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (56.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (18.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:48:56 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 16:49:28 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (32.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 16:49:28 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 16:49:28 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:00:42 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (60.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (27.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.1ms)
+Completed 200 OK in 184ms (Views: 133.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:00:43 +0800
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:00:43 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:00:47 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (25.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:00:47 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:00:47 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:02:17 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (31.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:02:17 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:02:17 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:03:01 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (65.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (25.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 185ms (Views: 130.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:03:02 +0800
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:03:02 +0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:13 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (17.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 27.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:13 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:13 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:34 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (51.2ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (3.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 76ms (Views: 73.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:34 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:34 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:35 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (31.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (32.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 122ms (Views: 119.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (19.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (4.4ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (39.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (16.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (31.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (5.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (13.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 66ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (19.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (31.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:37 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:07:38 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (21.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:07:38 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:07:38 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:11:17 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (56.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:11:17 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:11:17 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2012-09-21 17:11:20 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (2.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 3
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 3[0m
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (14.8ms)
+  Rendered articles/show.html.erb within layouts/application (423.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 438ms (Views: 433.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:11:20 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:11:20 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:22 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (24.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:22 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:22 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:23 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (2.5ms)
+  Rendered articles/show.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:24 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:24 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:28 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (18.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:28 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:28 +0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:29 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered articles/show.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (4.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 84ms (Views: 82.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:29 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:29 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:36 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (29.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:36 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:36 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:41 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.7ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.2ms)
+  Rendered articles/show.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:41 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:41 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:42 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (12.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (4.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:42 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:42 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:43 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (2.5ms)
+  Rendered articles/show.html.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:43 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:43 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:44 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (30.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (3.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:44 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:44 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:46 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (7.6ms)
+  Rendered articles/show.html.erb within layouts/application (75.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 88ms (Views: 84.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:46 +0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:46 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:47 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (28.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:47 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:47 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:48 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered articles/show.html.erb within layouts/application (6.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:48 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:48 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:49 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:49 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:49 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:50 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (4.2ms)
+  Rendered articles/show.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:50 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:50 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:51 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (18.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:51 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:51 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:52 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (8.1ms)
+  Rendered articles/show.html.erb within layouts/application (16.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.2ms)
+  Rendered devise/menu/_login_items.html.erb (4.6ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:52 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:52 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:53 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (30.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:53 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:53 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:54 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (2.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.1ms)
+  Rendered articles/show.html.erb within layouts/application (23.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:54 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:54 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:55 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (34.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:55 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:55 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:15:56 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered articles/show.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:56 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:56 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:15:57 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (78.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 92ms (Views: 91.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:15:57 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:15:57 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:16:58 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (28.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:16:58 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:16:58 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:17:00 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.1ms)
+  Rendered articles/show.html.erb within layouts/application (18.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:17:00 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:17:00 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:17:02 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (23.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (3.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:17:02 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:17:02 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:17:03 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered comments/_form.html.erb (2.5ms)
+  Rendered articles/show.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.2ms)
+  Rendered devise/menu/_login_items.html.erb (7.6ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:17:03 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:17:03 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:17:04 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (78.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:17:05 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:17:05 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:17:07 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (21.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (3.5ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:17:07 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:17:07 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2012-09-21 17:17:13 +0800
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered articles/_form.html.erb (4.1ms)
+  Rendered articles/edit.html.erb within layouts/application (7.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (1.9ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:17:13 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:17:13 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:18:10 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered articles/show.html.erb within layouts/application (12.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:10 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:10 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:18:12 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (28.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:12 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:12 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:18:14 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (28.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:14 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:14 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:18:24 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (62.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (23.4ms)
+  Rendered devise/menu/_login_items.html.erb (4.0ms)
+Completed 200 OK in 185ms (Views: 133.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:24 +0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:24 +0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:18:25 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (3.7ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (65.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 80.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:25 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:25 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:18:27 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (3.6ms)
+  Rendered articles/show.html.erb within layouts/application (208.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 222ms (Views: 218.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:27 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:28 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:18:29 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (20.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:18:29 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:18:29 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:20:06 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (14.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:20:06 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:20:06 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:20:10 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (29.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (36.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 78.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:20:10 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:20:10 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:20:13 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered articles/show.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:20:13 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:20:13 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:20:17 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (11.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:20:17 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:20:17 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "userInfo_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("articles")
+  [1m[36m (2.8ms)[0m  [1mCREATE INDEX "index_articles_on_userInfo_id" ON "articles" ("userInfo_id")[0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "userInfo_id" integer, "article_id" integer, "author_name" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35m (4.6ms)[0m  CREATE INDEX "index_comments_on_article_id" ON "comments" ("article_id")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_comments_on_article_id')
+  [1m[36m (2.5ms)[0m  [1mCREATE INDEX "index_comments_on_userInfo_id" ON "comments" ("userInfo_id")[0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("models")[0m
+  [1m[35m (2.7ms)[0m  CREATE UNIQUE INDEX "index_models_on_email" ON "models" ("email")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("models")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_models_on_email')
+  [1m[36m (2.6ms)[0m  [1mCREATE UNIQUE INDEX "index_models_on_reset_password_token" ON "models" ("reset_password_token")[0m
+  [1m[35m (6.9ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role_name" varchar(255), "role_desc" varchar(255), "state" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "article_id" integer, "tag_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("taggings")
+  [1m[36m (2.8ms)[0m  [1mCREATE INDEX "index_taggings_on_article_id" ON "taggings" ("article_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("taggings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_article_id')[0m
+  [1m[35m (3.6ms)[0m  CREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")
+  [1m[36m (9.9ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (5.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120919054705')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120511081212')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120507083136')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120511065615')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120507083150')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120507083118')[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120919034655')
+  [1m[36m (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120507083204')[0m
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2012-09-21 17:21:17 +0800
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered articles/_form.html.erb (125.3ms)
+  Rendered articles/edit.html.erb within layouts/application (159.8ms)
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 299ms (Views: 213.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:21:18 +0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:21:18 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started PUT "/articles/1" for 127.0.0.1 at 2012-09-21 17:22:03 +0800
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "article"=>{"title"=>"ActionController", "body"=>"HTTP通訊協定是一種Request-Response(請求-回應)的流程，客戶端(通常是瀏覽器)向伺服器送出一個HTTP request封包，然後伺服器就回應一個response封包。在上一章中，我們介紹了Rails如何使用路由來分派request到Controller的其中一個Action。而每個Action的任務就是根據客戶端傳來的資料與Model互動，然後回應結果給客戶端。這一章中我們將仔細介紹負責回應請求的Controller。\r\nApplicationController\r\n\r\n預設產生出來的Controller都繼承自ApplicationController。因此定義在這裡的方法可以被所有Controller取用，你可以在這邊定義一些共用的方法。預設的application_controller.rb長的如下：\r\n\r\nclass ApplicationController < ActionController::Base\r\n  protect_from_forgery\r\nend\r\n\r\n其中的protect_from_forgery方法啟動了CSRF安全性功能，所有非GET的HTTP request都必須帶有一個Token參數才能存取，Rails會自動在所有表單中幫你插入Token參數，預設的Layout中也有一行<%= csrf_meta_tag %>標籤可以讓JavaScript讀取到這個Token。會需要關閉這個功能的時機是，你需要開放API給非瀏覽器客戶端，這時候你會需要取消它：\r\n\r\nclass ApisController < ApplicationController\r\n  skip_before_filter :verify_authenticity_token\r\nend\r\n\r\n    CSRF 網路攻擊 http://en.wikipedia.org/wiki/Cross-site_request_forgery\r\n\r\n    注意，請將方法放在protected或private之下，如果是public方法，就會變成一個公開的Action可以給瀏覽器呼叫到。\r\n\r\n產生Controller與Action\r\n\r\n我們在Part1示範過，要產生一個Controller檔案，請輸入\r\n\r\nrails g controller events\r\n\r\n如此便會產生app/controllers/events_controller.rb，依照RESTful設計的慣例，所有的Controller命名都是複數，而檔案名稱依照慣例都是{name}_controller.rb。\r\n\r\n一個Action就是Controller裡的一個Public方法：\r\n\r\nclass EventsController < ApplicationController\r\n  def show\r\n    # ...\r\n  end\r\nend\r\n\r\n    除了繼承自ApplicationController，我們也可以繼承更底層的ActionController::Metal，請參考Rails3: 新的 Metal 機制。\r\n\r\n在Action方法中我們要處理request，基本上會做三件事情: 1. 收集request的資訊，例如使用者傳進來的參數 2. 操作Model來做資料的處理 3. 回傳response結果，這個動作稱作render\r\nRequest資訊收集\r\n\r\n在Controller的Action之中，Rails提供了一些方法可以讓你得知此request各種資訊，包括：\r\n\r\n    action_name 目前的Action名稱\r\n\r\n    cookies Cookie 下述\r\n\r\n    headers HTTP標頭\r\n\r\n    params 包含用戶所有傳進來的參數Hash，這是最常使用的資訊\r\n\r\n    request 各種關於此request的詳細資訊\r\n        request_method\r\n        method\r\n        delete?, get?, head?, post?, put?\r\n        xml_http_request? 或 xhr?\r\n        url\r\n        protocol, host, port, path 和 query_string\r\n        domain\r\n        host_with_port\r\n        port_string\r\n        ssl?\r\n        remote_ip?\r\n        path_without_extension, path_without_format_and_extension, format_and_extension, relative_path\r\n        env\r\n        accepts\r\n        format\r\n        mime_type\r\n        content_type\r\n        headers\r\n        body\r\n        content_length\r\n\r\n    response 代表要回傳的內容，會由Rails設定好。通常你會用到的時機是你想加特別的Response Header。\r\n\r\n    session Session下述\r\n\r\n    正確的說，params這個Hash是ActiveSupport::HashWithIndifferentAccess物件，而不是普通的Hash而已。Ruby內建的Hash，用Symbol的hash[:foo]和用字串的hash[\"foo\"]是不一樣的，這在混用的時候常常搞錯而取不到值，算是常見的臭蟲來源。Rails在這裡使用的ActiveSupport::HashWithIndifferentAccess物件，無論鍵是Symbol或字串，都指涉相同的值，減少麻煩。\r\n\r\nRender結果\r\n\r\n在根據request資訊做好資料處理之後，我們接下來就要回傳結果給用戶。事實上，就算你什麼都不處理，Action方法裡面空空如也，甚至不定義Action，Rails預設也還是會執行render方法。這個render方法會回傳預設的Template，依照Rails慣例就是app/views/{controller_name}/{action_name}。如果找不到樣板檔案的話，會出現Template is missing的錯誤。\r\n\r\n當然，有時候我們會需要自定render，也許是指定不同的Template，也許是不需要Template。這時候有以下參數可以使用：\r\n直接回傳結果\r\n\r\n    render :text => \"Hello\" 直接回傳字串內容，不使用任何樣板。\r\n    render :xml => @event.to_xml 回傳XML格式\r\n    render :json => @event.to_json 回傳JSON格式(再加上:callback就會是JSONP)\r\n    render :nothing => true 空空如也\r\n\r\n指定Template\r\n\r\n    :template 指定Template\r\n    :action 指定使用該Action的Template(注意到只是使用它的Template，而不會執行該Action內的程式)\r\n    :file 指定Template的檔名全名\r\n\r\n其他參數\r\n\r\n    :status 設定HTTP status，預設是200，也就是正常。其他常用代碼包括401權限不足、404找不到頁面、500伺服器錯誤等。\r\n    :layout 可以指定這個Action的Layout，設成false即關掉Layout\r\n\r\n補充一提，在特定情況你想把render的結果存成一個字串，例如拿到局部樣板Partials成為一個字串，這時候可以改使用render_to_string :partial => \"foobar\"\r\nRedirect\r\n\r\n如果Action不要render任何結果，而是要使用者轉向到別頁，可以使用redirect_to\r\n\r\n    redirect_to :action => \"show\", :id => @event\r\n    redirect_to :back 回到上一頁。\r\n\r\n    注意，一個Action中只能有一個render或一個redirect_to。不然你會得到一個DoubleRenderError例外錯誤。\r\n\r\n串流 Sending data\r\n\r\n如果需要回傳二進位Binary資料，有兩個方法可以使用：\r\n\r\nsend_data(data, options={}) 回傳二進位字串，接受以下參數：\r\n\r\n    data 是二進位的字串\r\n    :filename 使用者儲存下來的檔案名稱\r\n    :type 預設是application/octet-stream\r\n    :disposition inline或attachment\r\n    :status 預設是200\r\n\r\nsend_file(file_location, options={}) 回傳一個檔案，接受以下參數：\r\n\r\n    file_location 是檔案路徑和檔名\r\n    :filename 使用者儲存下來的檔案名稱\r\n    :type 預設是application/octet-stream\r\n    :disposition inline或attachment\r\n    :status 預設是200\r\n    :buffer_size stream的暫存空間，預設4096 bytes\r\n    :stream 預設是false，會先將整個檔案先載入記憶體，如果檔案非常大可能造成問題。\r\n\r\n    Rails支援X-Sendfile Header可以將傳檔的任務委派給網頁伺服器處理，降低Rails伺服器的負擔。\r\n\r\nrespond_to\r\n\r\n我們在第六章RESTful應用程式中曾經示範過用法，respond_to可以用來回應不同的資料格式。Rails內建支援格式包括有:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :json等。如果需要擴充，可以編輯config/initializers/mime_types.rb這個檔案。\r\n\r\n如果你想要設定一個else的情況，你可以用:any：\r\n\r\nrespond_to do |format|\r\n  format.html\r\n  format.xml { render :xml => @event.to_xml }\r\n  format.any { render :text => \"WTF\" }\r\nend\r\n\r\nSessions\r\n\r\nHTTP是一種無狀態的通訊協定，為了能夠讓瀏覽器能夠在跨request之間記住資訊，Rails提供了Session功能，像是記住登入的狀態、記住使用者購物車的內容等等，都是用Session實作出來的。\r\n\r\n要操作Session，直接操作session這個Hash變數即可。例如：\r\n\r\nsession[:cart] = Cart.new\r\n\r\n只要是可以被序列化的物件，都可以放進session之中。當然，你不會想放太大的資料進去，這樣每次request讀取時會降低伺服器的效能。\r\nSession storage\r\n\r\nRails預設採用Cookies session storage來儲存Session資料，它是將Session資料加密後放到瀏覽器的Cookie之中。最大的好處是對伺服器的效能衝擊最低，缺點是大小最多4Kb，另外也有人擔心它的安全性。\r\n\r\n除了Cookies session storage，Rails也支援其他方式，你可以修改config/initializers/session_store.rb：\r\n\r\n    :active_record_store 使用資料庫來儲存。\r\n    :mem_cache_store 使用Memcached快取系統來儲存\r\n\r\n一般來說使用預設的Cookies session storage即可，如果對安全性較高要求，可以使用資料庫。如果希望兼顧效能，可以考慮使用Memcached。\r\n\r\n採用:active_record_store的話，必須產生sessions資料表：\r\n\r\n$ rake db:sessions:create\r\n$ rake db:migrate\r\n\r\nCookies\r\n\r\n除了Session，我們也可以直接操作底層的Cookie，以下是一些使用範例：\r\n\r\n# Sets a simple session cookie.\r\ncookies[:user_name] = \"david\"\r\n\r\n# Sets a cookie that expires in 1 hour.\r\ncookies[:login] = { :value => \"XJ-122\", :expires => 1.hour.from_now }\r\n\r\n# Example for deleting:\r\ncookies.delete :user_name\r\n\r\ncookies[:key] = {\r\n   :value => 'a yummy cookie',\r\n   :expires => 1.year.from_now,\r\n   :domain => 'domain.com'\r\n}\r\n\r\ncookies.delete(:key, :domain => 'domain.com')\r\n\r\n因為資料是存放在使用者瀏覽器，所以是安全性是不高的。如果需要存一些需要保護不想使用者知道的資料，Rails也提供了Signed方法：\r\n\r\ncookies.signed[:user_preference] = @current_user.preferences\r\n\r\n另外，如果是盡可能永遠留在使用者瀏覽器的資料，可以使用Permanent方法：\r\n\r\ncookies.permanent[:remember_me] = [current_user.id, current_user.salt]\r\n\r\n兩者也可以加在一起用：\r\n\r\ncookies.permanent.signed[:remember_me] = [current_user.id, current_user.salt]\r\n\r\nFlash訊息\r\n\r\n我們在Part1示範過用Flash來傳遞訊息。它的用處在於redirect時，能夠從這一個request傳遞文字訊息到下一個request，例如從create Action傳遞「成功建立」的訊息到show Action。\r\n\r\nflash是一個Hash，其中的鍵你可以自定，常用:notice、:warning或:error等。例如我們在第一個Action中設定它：\r\n\r\ndef create\r\n  @event = Event.create(params[:event])\r\n  flash[:notice] = \"成功建立\"\r\n  redirect_to :action => :show\r\nend\r\n\r\n那麼在下一個Action中，我們就可以在Template中讀取到這個訊息，通常我們會放在Layout中：\r\n\r\n<p><%= flash[:notice] %></p>\r\n\r\n使用過一次之後，Rails就會自動清除flash。\r\n\r\n另外，有時候你等不及到下一個Action，就想讓Template在同一個Action中讀取到flash值，這時候你可以寫成：\r\n\r\nflash.now[:notice] = \"foobar\"\r\n\r\nFilters\r\n\r\n可將Controller中重複的程式抽出來，有三種方法可以定義在進入Action之前、之中或之後執行特定方法，分別是before_filter、after_filter和around_filter，其中before_filter最為常用。這三個方法可以接受Code block、一個Symbol方法名稱或是一個物件(Rails會呼叫此物件的filter方法)。\r\nbefore_filter\r\n\r\nbefore_filter最常用於準備跨Action共用的資料，或是使用者權限驗證等等：\r\n\r\nclass EventsControler < ApplicationController\r\n  before_filter :find_event, :only => :show\r\n\r\n  def show\r\n  end\r\n\r\n  protected\r\n\r\n  def find_event\r\n    @event = Event.find(params[:id])\r\n  end\r\n  \r\nend\r\n\r\n每一個都可以搭配:only或:except參數。\r\naround_filter\r\n\r\n# app/controllers/benchmark_filter.rb\r\nclass BenchmarkFilter\r\n    def self.filter(controller)\r\n     timer = Time.now\r\n     Rails.logger.debug \"---\#{controller.controller_name} \#{controller.action_name}\"\r\n     yield # 這裡讓出來執行Action動作\r\n     elapsed_time = Time.now - timer\r\n     Rails.logger.debug \"---\#{controller.controller_name} \#{controller.action_name} finished in %0.2f\" % elapsed_time\r\n    end\r\nend\r\n\r\n# app/controller/events_controller.rb\r\nclass EventsControler < ApplicationController\r\n    around_filter BenchmarkFilter\r\nend\r\n\r\nFilter的順序\r\n\r\n當有多個Filter時，Rails是由上往下依序執行的。如果需要加到第一個執行，可以使用prepend_before_filter方法，同理也有prepend_after_filter和prepend_around_filter。\r\n\r\n如果需要取消從父類別繼承過來的Filter，可以使用skip_before_filter :filter_method_name方法，同理也有skip_after_filter和skip_around_filter。\r\nrescue_from\r\n\r\nrescue_from可以在Controller中宣告救回例外，例如：\r\n\r\nclass ApplicationController < ActionController::Base\r\n\r\n    rescue_from ActiveRecord::RecordNotFound, :with => :show_not_found\r\n    rescue_from ActiveRecord::RecordInvalid, :with => :show_error\r\n\r\n    protected\r\n\r\n    def show_not_found\r\n        # render something\r\n    end\r\n\r\n    def show_error\r\n        # render something\r\n    end\r\n\r\nend\r\n\r\nHTTP Basic Authenticate\r\n\r\nRails內建支援HTTP Basic Authenticate，可以很簡單實作出認證功能：\r\n\r\nclass PostsController < ApplicationController\r\n    before_filter :authenticate\r\n\r\n    protected\r\n\r\n    def authenticate\r\n     authenticate_or_request_with_http_basic do |username, password|\r\n       username == \"foo\" && password == \"bar\"\r\n     end\r\n    end\r\nend\r\n\r\n在Rails 3.1中，也可以這樣寫：\r\n\r\nclass PostsController < ApplicationController\r\n    http_basic_authenticate_with :name => \"foo\", :password => \"bar\"\r\nend", "tag_list"=>""}, "commit"=>"保存", "id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  UPDATE "articles" SET "title" = 'ActionController', "body" = 'HTTP通訊協定是一種Request-Response(請求-回應)的流程，客戶端(通常是瀏覽器)向伺服器送出一個HTTP request封包，然後伺服器就回應一個response封包。在上一章中，我們介紹了Rails如何使用路由來分派request到Controller的其中一個Action。而每個Action的任務就是根據客戶端傳來的資料與Model互動，然後回應結果給客戶端。這一章中我們將仔細介紹負責回應請求的Controller。
+ApplicationController
+
+預設產生出來的Controller都繼承自ApplicationController。因此定義在這裡的方法可以被所有Controller取用，你可以在這邊定義一些共用的方法。預設的application_controller.rb長的如下：
+
+class ApplicationController < ActionController::Base
+ protect_from_forgery
+end
+
+其中的protect_from_forgery方法啟動了CSRF安全性功能，所有非GET的HTTP request都必須帶有一個Token參數才能存取，Rails會自動在所有表單中幫你插入Token參數，預設的Layout中也有一行<%= csrf_meta_tag %>標籤可以讓JavaScript讀取到這個Token。會需要關閉這個功能的時機是，你需要開放API給非瀏覽器客戶端，這時候你會需要取消它：
+
+class ApisController < ApplicationController
+ skip_before_filter :verify_authenticity_token
+end
+
+ CSRF 網路攻擊 http://en.wikipedia.org/wiki/Cross-site_request_forgery
+
+ 注意，請將方法放在protected或private之下，如果是public方法，就會變成一個公開的Action可以給瀏覽器呼叫到。
+
+產生Controller與Action
+
+我們在Part1示範過，要產生一個Controller檔案，請輸入
+
+rails g controller events
+
+如此便會產生app/controllers/events_controller.rb，依照RESTful設計的慣例，所有的Controller命名都是複數，而檔案名稱依照慣例都是{name}_controller.rb。
+
+一個Action就是Controller裡的一個Public方法：
+
+class EventsController < ApplicationController
+ def show
+ # ...
+ end
+end
+
+ 除了繼承自ApplicationController，我們也可以繼承更底層的ActionController::Metal，請參考Rails3: 新的 Metal 機制。
+
+在Action方法中我們要處理request，基本上會做三件事情: 1. 收集request的資訊，例如使用者傳進來的參數 2. 操作Model來做資料的處理 3. 回傳response結果，這個動作稱作render
+Request資訊收集
+
+在Controller的Action之中，Rails提供了一些方法可以讓你得知此request各種資訊，包括：
+
+ action_name 目前的Action名稱
+
+ cookies Cookie 下述
+
+ headers HTTP標頭
+
+ params 包含用戶所有傳進來的參數Hash，這是最常使用的資訊
+
+ request 各種關於此request的詳細資訊
+ request_method
+ method
+ delete?, get?, head?, post?, put?
+ xml_http_request? 或 xhr?
+ url
+ protocol, host, port, path 和 query_string
+ domain
+ host_with_port
+ port_string
+ ssl?
+ remote_ip?
+ path_without_extension, path_without_format_and_extension, format_and_extension, relative_path
+ env
+ accepts
+ format
+ mime_type
+ content_type
+ headers
+ body
+ content_length
+
+ response 代表要回傳的內容，會由Rails設定好。通常你會用到的時機是你想加特別的Response Header。
+
+ session Session下述
+
+ 正確的說，params這個Hash是ActiveSupport::HashWithIndifferentAccess物件，而不是普通的Hash而已。Ruby內建的Hash，用Symbol的hash[:foo]和用字串的hash["foo"]是不一樣的，這在混用的時候常常搞錯而取不到值，算是常見的臭蟲來源。Rails在這裡使用的ActiveSupport::HashWithIndifferentAccess物件，無論鍵是Symbol或字串，都指涉相同的值，減少麻煩。
+
+Render結果
+
+在根據request資訊做好資料處理之後，我們接下來就要回傳結果給用戶。事實上，就算你什麼都不處理，Action方法裡面空空如也，甚至不定義Action，Rails預設也還是會執行render方法。這個render方法會回傳預設的Template，依照Rails慣例就是app/views/{controller_name}/{action_name}。如果找不到樣板檔案的話，會出現Template is missing的錯誤。
+
+當然，有時候我們會需要自定render，也許是指定不同的Template，也許是不需要Template。這時候有以下參數可以使用：
+直接回傳結果
+
+ render :text => "Hello" 直接回傳字串內容，不使用任何樣板。
+ render :xml => @event.to_xml 回傳XML格式
+ render :json => @event.to_json 回傳JSON格式(再加上:callback就會是JSONP)
+ render :nothing => true 空空如也
+
+指定Template
+
+ :template 指定Template
+ :action 指定使用該Action的Template(注意到只是使用它的Template，而不會執行該Action內的程式)
+ :file 指定Template的檔名全名
+
+其他參數
+
+ :status 設定HTTP status，預設是200，也就是正常。其他常用代碼包括401權限不足、404找不到頁面、500伺服器錯誤等。
+ :layout 可以指定這個Action的Layout，設成false即關掉Layout
+
+補充一提，在特定情況你想把render的結果存成一個字串，例如拿到局部樣板Partials成為一個字串，這時候可以改使用render_to_string :partial => "foobar"
+Redirect
+
+如果Action不要render任何結果，而是要使用者轉向到別頁，可以使用redirect_to
+
+ redirect_to :action => "show", :id => @event
+ redirect_to :back 回到上一頁。
+
+ 注意，一個Action中只能有一個render或一個redirect_to。不然你會得到一個DoubleRenderError例外錯誤。
+
+串流 Sending data
+
+如果需要回傳二進位Binary資料，有兩個方法可以使用：
+
+send_data(data, options={}) 回傳二進位字串，接受以下參數：
+
+ data 是二進位的字串
+ :filename 使用者儲存下來的檔案名稱
+ :type 預設是application/octet-stream
+ :disposition inline或attachment
+ :status 預設是200
+
+send_file(file_location, options={}) 回傳一個檔案，接受以下參數：
+
+ file_location 是檔案路徑和檔名
+ :filename 使用者儲存下來的檔案名稱
+ :type 預設是application/octet-stream
+ :disposition inline或attachment
+ :status 預設是200
+ :buffer_size stream的暫存空間，預設4096 bytes
+ :stream 預設是false，會先將整個檔案先載入記憶體，如果檔案非常大可能造成問題。
+
+ Rails支援X-Sendfile Header可以將傳檔的任務委派給網頁伺服器處理，降低Rails伺服器的負擔。
+
+respond_to
+
+我們在第六章RESTful應用程式中曾經示範過用法，respond_to可以用來回應不同的資料格式。Rails內建支援格式包括有:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :json等。如果需要擴充，可以編輯config/initializers/mime_types.rb這個檔案。
+
+如果你想要設定一個else的情況，你可以用:any：
+
+respond_to do |format|
+ format.html
+ format.xml { render :xml => @event.to_xml }
+ format.any { render :text => "WTF" }
+end
+
+Sessions
+
+HTTP是一種無狀態的通訊協定，為了能夠讓瀏覽器能夠在跨request之間記住資訊，Rails提供了Session功能，像是記住登入的狀態、記住使用者購物車的內容等等，都是用Session實作出來的。
+
+要操作Session，直接操作session這個Hash變數即可。例如：
+
+session[:cart] = Cart.new
+
+只要是可以被序列化的物件，都可以放進session之中。當然，你不會想放太大的資料進去，這樣每次request讀取時會降低伺服器的效能。
+Session storage
+
+Rails預設採用Cookies session storage來儲存Session資料，它是將Session資料加密後放到瀏覽器的Cookie之中。最大的好處是對伺服器的效能衝擊最低，缺點是大小最多4Kb，另外也有人擔心它的安全性。
+
+除了Cookies session storage，Rails也支援其他方式，你可以修改config/initializers/session_store.rb：
+
+ :active_record_store 使用資料庫來儲存。
+ :mem_cache_store 使用Memcached快取系統來儲存
+
+一般來說使用預設的Cookies session storage即可，如果對安全性較高要求，可以使用資料庫。如果希望兼顧效能，可以考慮使用Memcached。
+
+採用:active_record_store的話，必須產生sessions資料表：
+
+$ rake db:sessions:create
+$ rake db:migrate
+
+Cookies
+
+除了Session，我們也可以直接操作底層的Cookie，以下是一些使用範例：
+
+# Sets a simple session cookie.
+cookies[:user_name] = "david"
+
+# Sets a cookie that expires in 1 hour.
+cookies[:login] = { :value => "XJ-122", :expires => 1.hour.from_now }
+
+# Example for deleting:
+cookies.delete :user_name
+
+cookies[:key] = {
+ :value => ''a yummy cookie'',
+ :expires => 1.year.from_now,
+ :domain => ''domain.com''
+}
+
+cookies.delete(:key, :domain => ''domain.com'')
+
+因為資料是存放在使用者瀏覽器，所以是安全性是不高的。如果需要存一些需要保護不想使用者知道的資料，Rails也提供了Signed方法：
+
+cookies.signed[:user_preference] = @current_user.preferences
+
+另外，如果是盡可能永遠留在使用者瀏覽器的資料，可以使用Permanent方法：
+
+cookies.permanent[:remember_me] = [current_user.id, current_user.salt]
+
+兩者也可以加在一起用：
+
+cookies.permanent.signed[:remember_me] = [current_user.id, current_user.salt]
+
+Flash訊息
+
+我們在Part1示範過用Flash來傳遞訊息。它的用處在於redirect時，能夠從這一個request傳遞文字訊息到下一個request，例如從create Action傳遞「成功建立」的訊息到show Action。
+
+flash是一個Hash，其中的鍵你可以自定，常用:notice、:warning或:error等。例如我們在第一個Action中設定它：
+
+def create
+ @event = Event.create(params[:event])
+ flash[:notice] = "成功建立"
+ redirect_to :action => :show
+end
+
+那麼在下一個Action中，我們就可以在Template中讀取到這個訊息，通常我們會放在Layout中：
+
+<p><%= flash[:notice] %></p>
+
+使用過一次之後，Rails就會自動清除flash。
+
+另外，有時候你等不及到下一個Action，就想讓Template在同一個Action中讀取到flash值，這時候你可以寫成：
+
+flash.now[:notice] = "foobar"
+
+Filters
+
+可將Controller中重複的程式抽出來，有三種方法可以定義在進入Action之前、之中或之後執行特定方法，分別是before_filter、after_filter和around_filter，其中before_filter最為常用。這三個方法可以接受Code block、一個Symbol方法名稱或是一個物件(Rails會呼叫此物件的filter方法)。
+before_filter
+
+before_filter最常用於準備跨Action共用的資料，或是使用者權限驗證等等：
+
+class EventsControler < ApplicationController
+ before_filter :find_event, :only => :show
+
+ def show
+ end
+
+ protected
+
+ def find_event
+ @event = Event.find(params[:id])
+ end
+ 
+end
+
+每一個都可以搭配:only或:except參數。
+around_filter
+
+# app/controllers/benchmark_filter.rb
+class BenchmarkFilter
+ def self.filter(controller)
+ timer = Time.now
+ Rails.logger.debug "---#{controller.controller_name} #{controller.action_name}"
+ yield # 這裡讓出來執行Action動作
+ elapsed_time = Time.now - timer
+ Rails.logger.debug "---#{controller.controller_name} #{controller.action_name} finished in %0.2f" % elapsed_time
+ end
+end
+
+# app/controller/events_controller.rb
+class EventsControler < ApplicationController
+ around_filter BenchmarkFilter
+end
+
+Filter的順序
+
+當有多個Filter時，Rails是由上往下依序執行的。如果需要加到第一個執行，可以使用prepend_before_filter方法，同理也有prepend_after_filter和prepend_around_filter。
+
+如果需要取消從父類別繼承過來的Filter，可以使用skip_before_filter :filter_method_name方法，同理也有skip_after_filter和skip_around_filter。
+rescue_from
+
+rescue_from可以在Controller中宣告救回例外，例如：
+
+class ApplicationController < ActionController::Base
+
+ rescue_from ActiveRecord::RecordNotFound, :with => :show_not_found
+ rescue_from ActiveRecord::RecordInvalid, :with => :show_error
+
+ protected
+
+ def show_not_found
+ # render something
+ end
+
+ def show_error
+ # render something
+ end
+
+end
+
+HTTP Basic Authenticate
+
+Rails內建支援HTTP Basic Authenticate，可以很簡單實作出認證功能：
+
+class PostsController < ApplicationController
+ before_filter :authenticate
+
+ protected
+
+ def authenticate
+ authenticate_or_request_with_http_basic do |username, password|
+ username == "foo" && password == "bar"
+ end
+ end
+end
+
+在Rails 3.1中，也可以這樣寫：
+
+class PostsController < ApplicationController
+ http_basic_authenticate_with :name => "foo", :password => "bar"
+end', "updated_at" = '2012-09-21 09:22:03.753558' WHERE "articles"."id" = 1
+  [1m[36m (11.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles/1
+Completed 302 Found in 36ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:22:03 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  Rendered comments/_comment.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (6.9ms)
+  Rendered articles/show.html.erb within layouts/application (169.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 188ms (Views: 177.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:22:04 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:22:04 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:22:15 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (37.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:22:15 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:22:15 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:22:27 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (2.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (6.2ms)
+  Rendered articles/show.html.erb within layouts/application (25.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (3.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:22:27 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:22:27 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:27:24 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (27.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:27:24 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:27:24 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:27:26 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (18.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:27:27 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:27:27 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2012-09-21 17:27:30 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered comments/_form.html.erb (4.3ms)
+  Rendered articles/show.html.erb within layouts/application (25.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:27:30 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:27:30 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:13 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (65.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (27.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+Completed 200 OK in 190ms (Views: 138.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:13 +0800
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:13 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2012-09-21 17:32:17 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"1"}
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1
+  [1m[36mSQL (7.8ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 1]]
+  [1m[36m (29.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 102ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:17 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (19.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:17 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:17 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/2" for 127.0.0.1 at 2012-09-21 17:32:21 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 2[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 2]]
+  [1m[36m (18.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 22ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:21 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (19.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 60.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:22 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:22 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/3" for 127.0.0.1 at 2012-09-21 17:32:22 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 3[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 3]]
+  [1m[36m (24.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 30ms (ActiveRecord: 25.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:22 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (15.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:22 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:22 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/4" for 127.0.0.1 at 2012-09-21 17:32:23 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 4[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 4]]
+  [1m[36m (19.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 25ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:23 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (14.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:23 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:23 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/5" for 127.0.0.1 at 2012-09-21 17:32:24 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 5[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 5]]
+  [1m[36m (80.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 84ms (ActiveRecord: 81.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:24 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (30.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/articles/5" for 127.0.0.1 at 2012-09-21 17:32:24 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "5"]]
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Article with id=5):
+  app/controllers/articles_controller.rb:41:in `find_article'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:30 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (45.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/articles/6" for 127.0.0.1 at 2012-09-21 17:32:31 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"6"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 6[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 6]]
+  [1m[36m (22.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 27ms (ActiveRecord: 23.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:31 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (12.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:31 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:31 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/7" for 127.0.0.1 at 2012-09-21 17:32:32 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"7"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 7[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 7]]
+  [1m[36m (24.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 28ms (ActiveRecord: 25.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:32 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (1.0ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (9.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:32 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:32 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/8" for 127.0.0.1 at 2012-09-21 17:32:33 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"8"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 8[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 8]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 19ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:33 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (6.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:33 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:33 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/9" for 127.0.0.1 at 2012-09-21 17:32:34 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 9[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 9]]
+  [1m[36m (24.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 30ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:34 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:34 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:34 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/articles/10" for 127.0.0.1 at 2012-09-21 17:32:35 +0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (2.7ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 10[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 10]]
+  [1m[36m (24.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 31ms (ActiveRecord: 27.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:32:35 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (6.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-21 17:32:38 +0800
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered articles/_form.html.erb (80.5ms)
+  Rendered articles/new.html.erb within layouts/application (82.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 93ms (Views: 92.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:38 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:38 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-21 17:32:47 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHul7VVYmPj0BKrBNlwpWkfxX5k534tMUrBhssRHOao=", "article"=>{"title"=>"fefefe", "body"=>"发送的发送的粉丝地方   d第三  ", "tag_list"=>""}, "commit"=>"保存"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `id=' for nil:NilClass):
+  app/controllers/articles_controller.rb:15:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.8ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.5ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2012-09-21 17:32:57 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2012-09-21 09:32:57.570475' WHERE "users"."id" = 2[0m
+  [1m[35m (656.4ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 667ms (ActiveRecord: 657.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-21 17:32:58 +0800
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-21 17:32:58 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (357.2ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 458ms (Views: 457.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:32:59 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:32:59 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-21 17:33:01 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:33:01 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:33:01 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-21 17:33:16 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zw9OsLgSE108h0VfQtOlVNCI1c2jXu4HtSdS4lPokxQ=", "user"=>{"email"=>"py890000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"提交"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'py890000@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "remember_created_at" = '2012-09-21 09:33:16.177400', "updated_at" = '2012-09-21 09:33:16.177996' WHERE "users"."id" = 2[0m
+  [1m[35m (25.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-09-21 07:32:05.082951', "current_sign_in_at" = '2012-09-21 09:33:16.205387', "sign_in_count" = 11, "updated_at" = '2012-09-21 09:33:16.205834' WHERE "users"."id" = 2
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 215ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-21 17:33:16 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:33:16 +0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:33:16 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:33:19 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (6.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:33:19 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:33:19 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-21 17:33:20 +0800
+Processing by ArticlesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered articles/_form.html.erb (7.1ms)
+  Rendered articles/new.html.erb within layouts/application (8.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:33:20 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:33:20 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-21 17:33:24 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zw9OsLgSE108h0VfQtOlVNCI1c2jXu4HtSdS4lPokxQ=", "article"=>{"title"=>"122", "body"=>"所三所", "tag_list"=>""}, "commit"=>"保存"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `id=' for nil:NilClass):
+  app/controllers/articles_controller.rb:15:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.8ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:37:33 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (42.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (40.1ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 177ms (Views: 126.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:37:33 +0800
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:37:33 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-21 17:37:35 +0800
+Processing by ArticlesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered articles/_form.html.erb (46.8ms)
+  Rendered articles/new.html.erb within layouts/application (49.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:37:35 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:37:35 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-21 17:38:40 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (6.9ms)
+  Rendered articles/new.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:38:40 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:38:40 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-21 17:39:04 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zw9OsLgSE108h0VfQtOlVNCI1c2jXu4HtSdS4lPokxQ=", "article"=>{"title"=>"f e f e", "body"=>"福福阿份额份额", "tag_list"=>""}, "commit"=>"保存"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `id=' for nil:NilClass):
+  app/controllers/articles_controller.rb:15:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.9ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:39:30 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (5.6ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "articles" 
+  Rendered articles/index.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:39:30 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:39:30 +0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2012-09-21 17:39:31 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  UPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2012-09-21 09:39:31.181641' WHERE "users"."id" = 2
+  [1m[36m (22.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 37ms (ActiveRecord: 23.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-21 17:39:31 +0800
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-21 17:39:31 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:39:31 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:39:31 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-21 17:39:40 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHReNuzv+tdm+kQKZNs4WMGyguZ8BBDXZUG1y1tQ8FQ=", "user"=>{"email"=>"py890000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"提交"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'py890000@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  UPDATE "users" SET "remember_created_at" = '2012-09-21 09:39:40.203466', "updated_at" = '2012-09-21 09:39:40.203969' WHERE "users"."id" = 2
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-09-21 09:33:16.205387', "current_sign_in_at" = '2012-09-21 09:39:40.222353', "sign_in_count" = 12, "updated_at" = '2012-09-21 09:39:40.222844' WHERE "users"."id" = 2[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 161ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-21 17:39:40 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:39:40 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:39:40 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:39:42 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:39:42 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:39:42 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-21 17:39:44 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (8.9ms)
+  Rendered articles/new.html.erb within layouts/application (10.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (1.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:39:44 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:39:44 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-21 17:39:49 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHReNuzv+tdm+kQKZNs4WMGyguZ8BBDXZUG1y1tQ8FQ=", "article"=>{"title"=>"f e f e f e f", "body"=>"份额份额份额份额份额 ", "tag_list"=>""}, "commit"=>"保存"}
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `id=' for nil:NilClass):
+  app/controllers/articles_controller.rb:15:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.7ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.9ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-21 17:42:44 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHReNuzv+tdm+kQKZNs4WMGyguZ8BBDXZUG1y1tQ8FQ=", "article"=>{"title"=>"f e f e f e f", "body"=>"份额份额份额份额份额 ", "tag_list"=>""}, "commit"=>"保存"}
+Completed 500 Internal Server Error in 8ms
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/articles_controller.rb:15:in `create'
+
+
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/py/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2012-09-21 17:43:20 +0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (5.1ms)
+  Rendered articles/new.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (69.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 93ms (Views: 84.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:43:20 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:43:20 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2012-09-21 17:43:23 +0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHReNuzv+tdm+kQKZNs4WMGyguZ8BBDXZUG1y1tQ8FQ=", "article"=>{"title"=>"e f e f e", "body"=>"f e f e f e f", "tag_list"=>""}, "commit"=>"保存"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "articles" ("body", "created_at", "title", "updated_at", "userInfo_id") VALUES (?, ?, ?, ?, ?)  [["body", "f e f e f e f"], ["created_at", Fri, 21 Sep 2012 09:43:23 UTC +00:00], ["title", "e f e f e"], ["updated_at", Fri, 21 Sep 2012 09:43:23 UTC +00:00], ["userInfo_id", 2]]
+  [1m[36m (31.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/articles
+Completed 302 Found in 46ms (ActiveRecord: 33.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 17:43:24 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (10.6ms)
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (3.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 17:43:24 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 17:43:24 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 18:05:00 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.8ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (45.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 110ms (Views: 107.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 18:05:00 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 18:05:00 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-09-21 18:05:46 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (6.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (21.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (5.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-21 18:05:46 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-21 18:05:46 +0800
+Served asset /application.css - 304 Not Modified (0ms)
