@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
-
+gem 'rails_kindeditor', '~> 0.3.0'
 gem "kaminari"
 
 # To use ActiveModel has_secure_password

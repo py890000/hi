@@ -3,9 +3,14 @@
   <%= f.label :title," 标题" %>
   <%= f.text_field :title %>
    
-  <%= f.label :body,"内容"%>
-  <%= f.text_area :body %>
+  <% f.label :body,"内容"%>
+  <%= f.kindeditor :body%>
+
+
+  
   <%= f.label :tag_list,"tags"%>
   <%= f.text_field :tag_list%> 
-  
+  <%= f.select   %>
+
+
   <%= f.submit "保存" %>

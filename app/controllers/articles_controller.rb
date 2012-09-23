@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @tags = Tag.all 
   end  
   
   def create

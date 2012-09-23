@@ -1,9 +1,24 @@
+<table >
+  <tr>
+    <td>
+     
 文章列表 
+    </td><td>
+  
 <%= link_to '写新文章', {:controller => 'articles', :action => 'new'} %>
+  
+  
+  </td>
+  
+  </tr>
+
+</table>
+
+
 <% @articles.each do |article| %>
 
 <p class="lead"><%= article.title %><p>    
-<p><%= article.body %></p>
+<%= article.body %>
 		
 <%= link_to '查看',article %>
 <%= link_to '修改',edit_article_path(article)  %>
