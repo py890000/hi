@@ -18,11 +18,11 @@
 <% @articles.each do |article| %>
 
 <p class="lead"><%= article.title %><p>    
-<%= article.body %>
+<%= simple_format(article.body) %>
 		
-<%= link_to '查看',article %>
-<%= link_to '修改',edit_article_path(article)  %>
-<%= button_to  '删除',article_path(article), :method => 'delete' %>
+<li><%= link_to '查看',article %></li>
+<li><%= link_to '修改',edit_article_path(article)  %></li>
+<li><%= button_to  '删除',article_path(article), :method => 'delete' %></li>
 
 <% end %>
 

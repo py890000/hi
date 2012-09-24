@@ -1,10 +1,10 @@
 class Article < ActiveRecord::Base
   belongs_to :userInfo,:class_name => "User", :foreign_key => "userInfo_id"
-  attr_accessible :body, :title,:tag_list
+  attr_accessible :body, :title,:tag_list,:tag
   has_many :comments,:dependent => :destroy
   has_many :taggings 
   has_many :tags, :through =>:taggings
-  
+  belongs_to :part
   def tag_list
     self.tags.collect do |tag|
       tag.name
@@ -19,8 +19,18 @@ class Article < ActiveRecord::Base
       tagging.tag_id = tag.id
     end
   end
+  def tag=(tag_id)
+    tag = Tag.find(tag_id)
+    tagging = self.taggings.new 
+    tagging.tag_id = tag.id
 
 
+  end
+  def tag
+    self.tags.collect do |tag|
+            tag.name
+                end.join(", ")
+  end
 
 
 
