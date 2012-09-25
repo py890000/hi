@@ -18636,3 +18636,813 @@ Served asset /roles.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-24 23:45:39 +0800
 Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:42:18 +0800
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 33ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-25 20:42:18 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/_links.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.1ms)
+  Rendered devise/menu/_registration_items.html.erb (1.2ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 442ms (Views: 330.1ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /roles.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /tags.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /kindeditor.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-25 20:42:19 +0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EowT2nG73X6CP4z0lsfYWMOVwW72hWDFUE+VR0yJ/A4=", "user"=>{"email"=>"py890000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"提交"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'py890000@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-09-24 13:28:44.096211', "current_sign_in_at" = '2012-09-25 12:42:21.601633', "sign_in_count" = 14, "updated_at" = '2012-09-25 12:42:21.602865' WHERE "users"."id" = 2[0m
+  [1m[35m (97.4ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 380ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.4ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:21 +0800
+Served asset /kindeditor.js - 304 Not Modified (1ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2012-09-25 20:42:29 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "articles" [0m
+  Rendered articles/index.html.erb within layouts/application (185.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (1.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 238ms (Views: 234.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-25 20:42:30 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /kindeditor.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:42:47 +0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /roles.js - 304 Not Modified (57ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:38 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:39 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /roles.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /home.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /home.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /tags.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:40 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /tags.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /roles.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:43:41 +0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /home.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /kindeditor.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:50 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:46:51 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:47:08 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /roles.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:47:09 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.1ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /tags.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:52:33 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:06 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /roles.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /tags.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:54:07 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /roles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /kindeditor.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /home.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/roles.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /roles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /kindeditor/kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /tags.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/kindeditor.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /kindeditor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-25 20:54:08 +0800
+Served asset /application.js - 304 Not Modified (11ms)
