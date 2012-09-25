@@ -5,7 +5,15 @@
 		<%= stylesheet_link_tag "/bootstrap/css/bootstrap.css" %>
 		<%= stylesheet_link_tag "/bootstrap/css/bootstrap-responsive.css" %>	
 		<%= javascript_include_tag "/bootstrap/js/bootstrap.js" %>
-	
+     <style type="text/css">
+       body {
+         padding-top: 50px;
+         padding-bottom: 40px;
+       }
+       .sidebar-nav {
+         padding: 9px 0;
+       }i
+     </style>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
 	</head>
@@ -33,20 +41,78 @@
       </div>
     </div>
 
-
-    <div class ="container-fluid">
+<div class="container-fluid">
       <div class="row-fluid">
-        <div class="span2">
-          <li>xxx</li> 
-        
-        
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">汪洋在任时</li>
+              <li><a href="#">汪书记最英明</a></li>
+              <li><a href="#">汪书记最英明</a></li>
+              <li><a href="#">汪书记最英明</a></li>
+              <li><a href="#">汪书记最英明</a></li>
+              <li class="nav-header">薄熙来在任时</li>
+              <li><a href="#">薄书记最英明</a></li>
+              <li><a href="#">薄书记最英明</a></li>
+              <li><a href="#">薄书记最英明</a></li>
+              <li><a href="#">薄书记最英明</a></li>
+              <li><a href="#">薄书记最英明</a></li>
+              <li><a href="#">薄书记最英明</a></li>
+              <li class="nav-header">薄熙来下台了</li>
+              <li><a href="#">中央最英明</a></li>
+              <li><a href="#">中央最英明</a></li>
+              <li><a href="#">中央最英明</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class ="row">
+            <div class ="span">
+              <ul class="breadcrumb">
+
+                <li>
+                <a href="#">首页</a> <span class="divider">/</span>
+                </li>
+                <li>
+                <a href="#">类库</a> <span class="divider">/</span>
+                </li>
+                <li class="active">数据</li>
+              </ul>
+              <form>
+                <input type="text" >
+              </form>
+              <div class="btn-group">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+         <div class ="row">
+          <table class="table table-condensed">
+            <tr><td>xxx</td> <td>ss</td></tr>
+
+
+
+          </table>
+
         </div>
-        <div class="span10">sssssfefef</div>
+        
+        </div><!--/span-->
+      </div><!--/row-->
 
+      <hr>
 
-      </div>
-    </div>  
+      <footer>
+        <p>&copy; 中国共产党铁血忠义青年团 2012</p>
+      </footer>
 
+    </div><!--/.fluid-container-->
 
 
 
