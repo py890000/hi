@@ -8,7 +8,7 @@ Hi::Application.routes.draw do
   resources :articles do
     resources :comments
   end
-
+  resources :roles
   root :to => "home#index"
   # resources  :articles 
   # The priority is based upon order of creation:

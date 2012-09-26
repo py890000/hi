@@ -53,7 +53,7 @@
               <li><a href="#">用户管理</a></li>
               
               <li class="nav-header">系统设置</li>
-              <li><a href="#">权限设置</a></li>
+              <li><a href="/roles">权限设置</a></li>
               <li><a href="#">角色设置</a></li>
               <li><a href="#">基础字典设置</a></li>
             </ul>
@@ -94,7 +94,9 @@
 
          <div class ="row">
           <table class="table table-condensed">
-		<%= yield :condensed%>
+		 <%= yield%>
+		 <% # :condensed 
+		 %>
             <tr><td>xxx</td> <td>ss</td></tr>
           </table>
 

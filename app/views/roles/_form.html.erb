@@ -1,0 +1,15 @@
+
+  <%= f.label :role_name," 角色名称" %>
+  <%= f.text_field :role_name %>
+   
+  <%= f.label :role_desc,"角色描述"%>
+  <%= f.text_area :role_desc%>
+
+
+  
+  <%= f.label :state,"角色状态"%>
+  
+  <%= f.select :state,[['启用',1],['禁用',2]],:multiple=>"multiple" %>
+
+
+  <%= f.submit "保存" %>
