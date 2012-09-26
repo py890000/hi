@@ -28,14 +28,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">社会主义最民主</a>
+          <a class="brand" href="#">CMS系统后台设置</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">首页</a></li>
               <li><a href="#about">关于</a></li>
               <li><a href="#contact">联系</a></li>
             </ul>
-            <p class="navbar-text pull-right">我代表<a href="#">人名</a></p>
+            <p class="navbar-text pull-right">登录<a href="#">人名</a></p>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -46,22 +46,16 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">汪洋在任时</li>
-              <li><a href="#">汪书记最英明</a></li>
-              <li><a href="#">汪书记最英明</a></li>
-              <li><a href="#">汪书记最英明</a></li>
-              <li><a href="#">汪书记最英明</a></li>
-              <li class="nav-header">薄熙来在任时</li>
-              <li><a href="#">薄书记最英明</a></li>
-              <li><a href="#">薄书记最英明</a></li>
-              <li><a href="#">薄书记最英明</a></li>
-              <li><a href="#">薄书记最英明</a></li>
-              <li><a href="#">薄书记最英明</a></li>
-              <li><a href="#">薄书记最英明</a></li>
-              <li class="nav-header">薄熙来下台了</li>
-              <li><a href="#">中央最英明</a></li>
-              <li><a href="#">中央最英明</a></li>
-              <li><a href="#">中央最英明</a></li>
+              <li class="nav-header">内容</li>
+              <li><a href="#">文章</a></li>
+              <li><a href="#">栏目</a></li>               
+              <li class="nav-header">用户管理</li>
+              <li><a href="#">用户管理</a></li>
+              
+              <li class="nav-header">系统设置</li>
+              <li><a href="#">权限设置</a></li>
+              <li><a href="#">角色设置</a></li>
+              <li><a href="#">基础字典设置</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -72,19 +66,24 @@
 
                 <li>
                 <a href="#">首页</a> <span class="divider">/</span>
-                </li>
+                  </li>
+
+	          <%= yield :breadcrumb%>	
+	
                 <li>
+		
+
                 <a href="#">类库</a> <span class="divider">/</span>
                 </li>
                 <li class="active">数据</li>
               </ul>
-              <form>
-                <input type="text" >
-              </form>
+		<div id="Query_Data">
+                <%=yield :queryData%>               
+		
+              </div>	
+             
               <div class="btn-group">
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
+                <%= yield :breadcrumb%>
               </div>
             </div>
           </div>
@@ -95,24 +94,22 @@
 
          <div class ="row">
           <table class="table table-condensed">
+		<%= yield :condensed%>
             <tr><td>xxx</td> <td>ss</td></tr>
-
-
-
           </table>
 
         </div>
         
-        </div><!--/span-->
-      </div><!--/row-->
+        </div>
+      </div>
 
       <hr>
 
       <footer>
-        <p>&copy; 中国共产党铁血忠义青年团 2012</p>
+        <p>&copy;CMSXITNG 2012</p>
       </footer>
 
-    </div><!--/.fluid-container-->
+    </div>
 
 
 
