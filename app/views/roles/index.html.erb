@@ -1,9 +1,13 @@
 <thead>
-    <tr><td>id</td><td>角色名称</td><td>角色描述</td><td>状态</td></tr>    
+  <tr>
+    <td>全选<input type="checkbox" id="select_all"></td>    
+    
+    <td>id</td><td>角色名称</td><td>角色描述</td><td>状态</td></tr>    
 </thead>
 <tbody>
 <% @roles.each do |role|%>
 <tr>
+<td><input type="checkbox" name="id_check"></td>
 	<td><%=role.id%></td>
     <td><%=role.role_name%></td>
     <td><%=role.role_desc%></td>
@@ -13,8 +17,13 @@
 </tbody>
 
 
-<%= content_for :breadcrumb do %>
-<%= link_to '新增', {:controller => 'roles', :action => 'new'},{:class=>'btn'} %>
 
-   
+<%= content_for :breadcrumb do %>
+  <%= link_to '新增', {:controller => 'roles', :action => 'new'},{:class=>'btn'} %>
+  <%= link_to '显示',{:controller => 'roles', :action => 'show',:id => 1},{:class=>'btn'} %>
+  <%= link_to '修改',{:controller => 'roles', :action => 'edit',:id => 2},{:class=>'btn'} %>
+  <%= link_to '删除',{:controller => 'roles', :action => 'destroy',:id => 1},{:method => :delete,:class=>'btn'} %>   
 <% end %>
+
+
+

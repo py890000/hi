@@ -24,7 +24,7 @@ class RolesController < ApplicationController
   def update
     @role.update_attributes(params[:role])
 
-    redirect_to :action => :show, :id => @role
+    redirect_to :action => :index
   end
 
   def destroy
@@ -36,7 +36,7 @@ class RolesController < ApplicationController
   protected
 
   def find_role
-    @role = role.find(params[:id])
+    @role = Role.find(params[:id])
   end
 
 end

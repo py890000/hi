@@ -62,25 +62,9 @@
         <div class="span9">
           <div class ="row">
             <div class ="span">
-              <ul class="breadcrumb">
-
-                <li>
-                <a href="#">首页</a> <span class="divider">/</span>
-                  </li>
-
-	          <%= yield :breadcrumb%>	
-	
-                <li>
+                  
 		
-
-                <a href="#">类库</a> <span class="divider">/</span>
-                </li>
-                <li class="active">数据</li>
-              </ul>
-		<div id="Query_Data">
-                <%=yield :queryData%>               
-		
-              </div>	
+             
              
               <div class="btn-group">
                 <%= yield :breadcrumb%>
@@ -92,14 +76,14 @@
 
 
 
-         <div class ="row">
-          <table class="table table-condensed">
-		 <%= yield%>
-		 <% # :condensed 
-		 %>
-            <tr><td>xxx</td> <td>ss</td></tr>
+          <div class ="row">
+                       <table class="table table-condensed">
+              <%= yield%>
+              <% # :condensed 
+            %>
+           
           </table>
-
+        
         </div>
         
         </div>
