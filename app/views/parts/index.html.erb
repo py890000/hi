@@ -1,0 +1,24 @@
+<thead>
+	<tr>
+		<td><%= link_to '新增', {:controller => 'parts', :action => 'new'} %></td>
+	</tr>
+	<tr>
+		<td>操作</td>
+
+		<td>栏目名称</td><td>描述</td><td>状态</td>
+	</tr>
+</thead>
+<tbody>
+	<% @parts.each do |part|%>
+	<tr>
+		<td> <%= link_to '查看',part_path(part) %>
+		<%= link_to '修改',edit_part_path(part) %>
+		<%= link_to '删除',part_path(part),:method=>:delete,:confirm => "你确定要删除吗?"%> </td>
+		<td><%= part.id%></td>
+		<td><%= part.name%></td>
+		<td><%= part.desc%></td>
+		<td><%= part.state%></td>
+	</tr>
+	<% end%>
+</tbody>
+

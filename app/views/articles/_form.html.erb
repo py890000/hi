@@ -1,17 +1,10 @@
+<%= f.label :title," 标题" %>
+<%= f.text_field :title %>
 
+<% f.label :body,"内容"%>
+<%= f.kindeditor :body%>
 
-  <%= f.label :title," 标题" %>
-  <%= f.text_field :title %>
-   
-  <% f.label :body,"内容"%>
-  <%= f.kindeditor :body%>
+<%= f.label :tag_list,"标签"%>
+<%= f.select :part_id,part_options   %>
 
-
-  
-  <%= f.label :tag_list,"tags"%>
-  <%= # f.text_field :tag_list
-  %> 
-  <%= f.select :part_id,part_options   %>
-
-
-  <%= f.submit "保存" %>
+<%= f.submit "保存" %>
