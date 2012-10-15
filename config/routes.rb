@@ -10,6 +10,7 @@ Hi::Application.routes.draw do
   end
   resources :roles
   resources :parts
+  resources :users
   root :to => "home#index"
   # resources  :articles 
   # The priority is based upon order of creation:

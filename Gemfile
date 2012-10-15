@@ -24,7 +24,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'rails_kindeditor', '~> 0.3.0'
 gem "kaminari"
-
+gem "twitter-bootstrap-rails","~>2.1.3",:group => :assets
+gem "cancan", "~> 1.6.8"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
