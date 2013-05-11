@@ -1,10 +1,11 @@
 class Article < ActiveRecord::Base
   belongs_to :userInfo,:class_name => "User", :foreign_key => "userInfo_id"
-  attr_accessible :body, :title,:tag_list,:tag
+  belongs_to :part
+  attr_accessible :body, :title,:tag_list,:tag,:part_id
   has_many :comments,:dependent => :destroy
   has_many :taggings 
   has_many :tags, :through =>:taggings
-  belongs_to :part
+  
   def tag_list
     self.tags.collect do |tag|
       tag.name
