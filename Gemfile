@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,6 +36,15 @@ gem 'bootstrap_helper', "1.4.1"
  #权限
 gem "cancan", "~> 1.6.8"
 gem "rb-readline"
+
+group :test,:development  do
+  gem "rspec-rails"  
+end
+group :test do
+  gem 'capybara'
+end
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

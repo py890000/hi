@@ -1,21 +1,12 @@
-<table >
-  <tr>
-    <td>
-    </td>
-    <td></td>
-    <td>
-     
- 
-    </td><td>
-  
-<%= link_to '写新文章', {:controller => 'articles', :action => 'new'} %>
-  
-  
-  </td>
-  
-  </tr>
 
-</table>
+<% if current_user %>
+  <%= current_user.id %>
+  <% end %> 
+<% if can? :create,Article %>
+<%= link_to '写新文章', {:controller => 'articles', :action => 'new'} %>
+<% end %>
+  
+
 <% @articles.each do |article| %>
   <div class = "row">
     <div class = "span9">
@@ -25,9 +16,14 @@
         
         <div style="float:right;"> 
           <div class="btn-group">
+            
             <%= link_to '查看',article,:class=>'btn' %>
+            <% if can? :edit,Article %>
             <%= link_to '修改',edit_article_path(article),:class =>'btn'  %>
+            <% end %>
+            <% if can? :destroy, Article %>
             <%= link_to  '删除',article_path(article), :method => 'delete',:class=>'btn' %>
+            <% end %>
           </div>
         </div>    
       </div>

@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :find_article, :only => [ :show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  
   def index
     @articles = Article.page(params[:page]).per(5)
   end

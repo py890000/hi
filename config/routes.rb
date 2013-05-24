@@ -11,7 +11,7 @@ Hi::Application.routes.draw do
   resources :roles
   resources :parts
   resources :users
-  root :to => "home#index"
+  root :to => "articles#index"
   # resources  :articles 
   # The priority is based upon order of creation:
   # first created -> highest priority.
