@@ -2,14 +2,18 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||=User.new
-    if user.role_id == 1
-      can :manage,:all
+    if  !user.nil?
+      can :read, Article
+      can :create, Article
+      can :update, Article do |article|
+        (article.userInfo_id == user.id)
+      end
+      can :destroy, Article do |article|
+        (article.userInfo_id == user.id )
+      end
     else
-     can  :read,:all
+      can :read, :all
     end
-
-
 
 
     # Define abilities for the passed in user here. For example:

@@ -197,3 +197,7 @@ zh-CN:
   activerecord:
     errors:
       <<: *errors
+  devise:
+    failure:
+      user:
+      not_found_in_database: '用户不存在！'

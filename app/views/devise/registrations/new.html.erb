@@ -1,18 +1,35 @@
-<h2>注册用户</h2>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),
+             :html => { :class => "form-horizontal"}) do |f| %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email,'帐号，为电子邮件格式' %><br />
-  <%= f.email_field :email %></div>
+    <fieldset>
+      <legend>注册用户</legend>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :password,'密码' %><br />
-  <%= f.password_field :password %></div>
+      <div class="control-group">
+        <%= f.label :email, '帐号:', :class => 'control-label' %>
+        <div class="controls">
+          <%= f.email_field :email, :class => 'input-xlarge' %>
+          <p class="help-block" >必须是EMAIL</p>
+        </div>
+      </div>
 
-  <div><%= f.label :password_confirmation,'再次输入密码' %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class="control-group" >
+        <%= f.label :password, '密码' , :class => 'control-label'%>
+        <div class="controls">
+        <%= f.password_field :password, :class => 'input-xlarge' %>
+        </div>
+      </div>
 
-  <div><%= f.submit "提交" %></div>
+
+      <div class="control-group" >
+        <%= f.label :password_confirmation, '再次输入密码' , :class => 'control-label'%>
+        <div class="controls">
+        <%= f.password_field :password_confirmation , :class => 'input-xlarge'%></div>
+      </div>
+
+      <div class="form-actions" ><%= f.submit "提交" , :class => 'btn' %></div>
+    </fieldset>
 <% end %>
 
 <%= render "links" %>

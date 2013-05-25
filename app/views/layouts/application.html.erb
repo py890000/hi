@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    <title>Py890000的技术博客</title>
-    <%= javascript_include_tag "application" %>
+<head>
+  <title>Py890000的技术博客</title>
+  <%= javascript_include_tag "application" %>
 
-		<%= stylesheet_link_tag    "application", :media => "all" %>
-		
-		<%= csrf_meta_tags %>
-	</head>
-	<body>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
 
-	   <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-         
-          <a class="brand" href="#">Py890000的技术博客</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-             <li>  <a href="/articles">主页</a></li>
-	     <li><a href="">关于</a></li>
-              <li><a href="/articles">联系</a></li>              
-              <%= render 'devise/menu/registration_items' %>
-              <%= render 'devise/menu/login_items' %>    
-            </ul>
-            <form class="navbar-form pull-right">
-             <input type="text" placeholder="Search"/>
-            </form>
-          </div>
-        </div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a class="brand" href="#">HIHI</a>
+
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="/articles">主页</a></li>
+          <li><a href="">关于</a></li>
+          <li><a href="/articles">联系</a></li>
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+        <form class="navbar-form pull-right">
+          <input type="text" placeholder="Search"/>
+        </form>
       </div>
     </div>
+  </div>
+</div>
 
-		<div class="container">
-			<div class="content">
-				<% if notice || alert %>
-				<div  class="row">
-                                <p class="notice"><%= notice %></p>
-                               <p class="alert"> <%= alert %></p>
-                                </div>		
-                                <% end %>
+<div class="container">
+  <div class="content">
+    <% if notice || alert %>
+        <div class="row">
+          <p class="notice"><%= notice %></p>
 
-				<div class="row">
-					<div class="span10">
-						<%= yield %>
-					</div>
-				</div>
-			</div>
-			<footer>
-				<p>
-					welcom  boke &copy; Jimmy  2012.  &copy; Jimmy 2012
-				</p>
-			</footer>
+          <p class="alert"> <%= alert %></p>
+        </div>
+    <% end %>
 
-		</div>
+    <div class="row">
+      <div class="span10">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>
+      welcom boke &copy; Jimmy 2012. &copy; Jimmy 2012
+    </p>
+  </footer>
 
-	</body>
+</div>
+
+</body>
 </html>

@@ -18,10 +18,10 @@
           <div class="btn-group">
             
             <%= link_to '查看',article,:class=>'btn' %>
-            <% if can? :edit,Article %>
+            <% if can? :edit,article %>
             <%= link_to '修改',edit_article_path(article),:class =>'btn'  %>
             <% end %>
-            <% if can? :destroy, Article %>
+            <% if can? :destroy, article %>
             <%= link_to  '删除',article_path(article), :method => 'delete',:class=>'btn' %>
             <% end %>
           </div>
@@ -31,7 +31,7 @@
 </div>    
 <% end %>
 
-
+<%= will_paginate(@articles, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 
 <div class="pagination"><%= paginate @articles %></div>
 

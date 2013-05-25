@@ -1,3 +1,4 @@
+<ul >
 <%- if controller_name != 'sessions' %>
 <li> <%= link_to "登陆", new_session_path(resource_name) %><li />
 <% end -%>
@@ -25,3 +26,4 @@
    <li>  <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><li />
   <% end -%>
 <% end -%>
+ </ul>

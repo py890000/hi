@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,16 +22,20 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
-gem 'rails_kindeditor', '0.3.0'
+gem 'devise-encryptable'
+
+gem "carrierwave"
+gem "rails_kindeditor"
+
 gem "kaminari"
-gem "twitter-bootstrap-rails","2.1.3",:group => :assets
+
 # 分页
 gem 'will_paginate', '3.0.2'
 #
 # Bootstrap
-gem 'anjlab-bootstrap-rails', '2.0.3.2', :require => 'bootstrap-rails'
-gem 'bootstrap-will_paginate', '0.0.3'
-gem 'bootstrap_helper', "1.4.1"
+gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
+gem 'bootstrap-will_paginate', '~>0.0.3'
+gem 'bootstrap_helper', "~>1.4.1"
 
  #权限
 gem "cancan", "~> 1.6.8"
