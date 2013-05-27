@@ -4,6 +4,7 @@
 
 <div class="row">
   <div class="span9">
+
     <% @articles.each do |article| %>
         <div class="well">
           <%= article.title %>
@@ -25,9 +26,20 @@
     <% end %>
   </div>
   <div class="span3">
-    <% @tags.each  do |tag|%>
-       <span class="label label-info"> <%= tag.name %>    </span>
-    <% end %>
+       <!--<span class="label label-info"> -->
+
+
+    <% @tags.each do |tag| %>
+        <%= link_to tag.name,  articles_path(:tag_id => tag.id)        %>
+       <% end %>
+
+
+    <!--</span>-->
+
+
+
+
+
   </div>
 </div>
 

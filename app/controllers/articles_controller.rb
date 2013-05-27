@@ -1,10 +1,20 @@
 class ArticlesController < ApplicationController
-  before_filter :find_article, :only => [ :show, :edit, :update, :destroy]
+  before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  
+
+
   def index
-    @articles = Article.page(params[:page]).per(5)
+    if  !params[:tag_id].nil?
+      @article_ids = Array.new
+      Tagging.where(['tag_id = ?', params[:tag_id]]).each do |tagging|
+        @article_ids << tagging.article_id
+      end
+      @articles = Article.where(["id in (?)", @article_ids]).paginate(:page => params[:page])
+    else
+      @articles = Article.paginate(:page => params[:page])
+    end
     @tags = Tag.order("created_at DESC")
+
   end
 
   def new

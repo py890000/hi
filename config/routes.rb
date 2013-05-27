@@ -1,7 +1,4 @@
 Hi::Application.routes.draw do
-  get "tags/index"
-
-  get "tags/show"
 
   devise_for :users
 
@@ -10,7 +7,12 @@ Hi::Application.routes.draw do
   end
   resources :roles
   resources :parts
-  resources :users
+  resources :tags
+
+
+
+
+
   root :to => "articles#index"
   # resources  :articles 
   # The priority is based upon order of creation:
