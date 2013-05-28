@@ -2,7 +2,7 @@
 <%= f.text_field :title %>
 
 <%= f.label :body,"内容"%>
-<%= f.kindeditor :body,:allowFileManager => false%>
+<%= f.kindeditor :body,:simple_mode => true,:width => '700px' %>
 
 <%= f.label :tag_list,"标签"%>
 <%= f.text_field :tag_list %>

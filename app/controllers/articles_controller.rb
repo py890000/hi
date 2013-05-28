@@ -9,9 +9,9 @@ class ArticlesController < ApplicationController
       Tagging.where(['tag_id = ?', params[:tag_id]]).each do |tagging|
         @article_ids << tagging.article_id
       end
-      @articles = Article.where(["id in (?)", @article_ids]).paginate(:page => params[:page])
+      @articles = Article.where(["id in (?)", @article_ids]).order("created_at DESC").paginate(:page => params[:page])
     else
-      @articles = Article.paginate(:page => params[:page])
+      @articles = Article.order("created_at DESC").paginate(:page => params[:page])
     end
     @tags = Tag.order("created_at DESC")
 
