@@ -11,9 +11,9 @@ RailsKindeditor.setup do |config|
   config.upload_file_ext = %w[doc docx xls xlsx ppt htm html txt zip rar gz bz2]
   
   # Porcess upload image size
-  # eg: 1600x1600 => 800x800
-  #     1600x800  => 800x400
-  #     400x400   => 400x400  # No Change
-  # config.image_resize_to_limit = [800, 800]
+    #eg: 1600x1600 => 800x800
+    #   1600x800  => 800x400
+    #   400x400   => 400x400  # No Change
+   config.image_resize_to_limit = [200, 200]
 
 end

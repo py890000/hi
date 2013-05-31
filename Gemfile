@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise-encryptable'
 
+gem "mini_magick"
 gem "carrierwave"
 gem "rails_kindeditor"
 

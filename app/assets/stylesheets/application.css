@@ -1,6 +1,6 @@
 /*
 *= require bootstrap_and_overrides
+*= = require_tree .
 */
-.mylist li{
-  float:left;
-}
+
+

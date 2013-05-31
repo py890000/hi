@@ -36,13 +36,16 @@
 
 <div class="container">
   <div class="content">
-    <% if notice || alert %>
-        <div class="row">
-          <p class="notice"><%= notice %></p>
 
+        <div class="row">
+          <% if notice  %>
+          <p class="notice"><%= notice %></p>
+          <% end %>
+          <% if alert %>
           <p class="alert"> <%= alert %></p>
+          <% end %>
         </div>
-    <% end %>
+
 
     <div class="row">
       <!--<div class="span10">-->

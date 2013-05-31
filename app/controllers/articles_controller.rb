@@ -1,7 +1,5 @@
 class ArticlesController < ApplicationController
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
-
 
   def index
     if  !params[:tag_id].nil?
@@ -26,7 +24,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     @article.userInfo_id = current_user.id
     @article.save
-    redirect_to :action => :index
+    redirect_to :action => :index , :notice => "Success"
   end
 
   def edit
@@ -38,7 +36,7 @@ class ArticlesController < ApplicationController
   def update
     @article.update_attributes(params[:article])
 
-    redirect_to :action => :show, :id => @article
+    redirect_to :action => :show, :id => @article,  :flash => { :warning => "Update Success!" }
   end
 
   def destroy

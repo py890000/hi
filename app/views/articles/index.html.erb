@@ -5,9 +5,10 @@
 <div class="row">
   <div class="span9">
 
+
     <% @articles.each do |article| %>
-        <div class="well">
-          <%= article.title %>
+        <div class="well" >
+          <h5><%= article.title %> </h5>
           <%= simple_format(article.body) %>
 
           <div style="float:right;">
@@ -18,7 +19,7 @@
                   <%= link_to '修改', edit_article_path(article), :class => 'btn' %>
               <% end %>
               <% if can? :destroy, article %>
-                  <%= link_to '删除', article_path(article), :method => 'delete', :class => 'btn' %>
+                  <%= link_to '删除', article_path(article), :method => 'delete', :class => 'btn',:confirm => 'question?'  %>
               <% end %>
             </div>
           </div>
